@@ -1,5 +1,5 @@
 <title>Cappic Photography - Akshaydeep Sharma</title>
-<iframe src="redirect.html" align="bottom" height="100%" width="100%" frameborder="0"></iframe>
+<iframe src="//cappicphotography.pixieset.com/akshay/" align="bottom" height="100%" width="100%" frameborder="0"></iframe>
 <style>body {overflow:hidden;}
 @media only screen and (min-width: 800px) {
 .no-touchevents #maindiv {top:4.95vw !important;}}
