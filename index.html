@@ -102,7 +102,7 @@ change.onreadystatechange=function()
   if (change.readyState==4 && change.status==200)
     {
     document.getElementById("maindiv").innerHTML=change.responseText;
-    }
+    };
   }
 change.open("GET",location + ".txt",true);
 change.send();
@@ -187,7 +187,7 @@ table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 <!--____________________________________________normalizr end-->
 
 <style>@font-face {font-family: 'Open Sans'; font-style: normal; font-weight: 400; src: url(fonts/OpenSans-Regular.ttf)}
-@font-face {font-family: 'Lato'; font-style: light; font-weight: 300; src: url(fonts/Lato-Light.ttf)}
+@font-face {font-family: 'Lato'; font-style: normal; font-weight: 300; src: url(fonts/Lato-Light.ttf)}
 </style>
 </body>
 </html>
