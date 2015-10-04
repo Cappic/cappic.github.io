@@ -73,5 +73,5 @@ with each picture having a number of distinct characteristics and innovation.</s
 </a></td>
 
 <a onClick="nav(this.id)" id="tutorials"><td id="content3">
-<span class="light title">Amazing Photography </span><span class="bold title">TUTORIALS</span>
+<span class="light title">Amazing Photography </span><br><span class="bold title">TUTORIALS</span>
 </td></a></tr></table>
