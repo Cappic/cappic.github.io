@@ -1,6 +1,11 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script>var root = document.querySelector(":root");
+var vsize = window.outerWidth;
+var fsize = vsize/100;
+root.style.fontSize = fsize;
+</script>
 <style>
 body {margin:0 auto; background: black no-repeat fixed center top; background-size:cover; overflow-x:hidden !important;
 }
@@ -57,7 +62,7 @@ hr {color:white
 </head>
 <body>
 
-<img id="innov" src="images/innov4.png" style="">
+<img id="innov" src="images/innov4.png">
 	<a onClick="nav(this.id)" id="index"><img id="logo" src="images/mlogo.png"></a>
 	<div id="menu">
 		<ul>
@@ -78,6 +83,7 @@ hr {color:white
 				<a><li onClick="nav(this.id); menuappear(this.id)" id="tutorials">Tutorials</li></a>
 			</ul>
 		</div>
+<img src="images/loading.gif" id="loading" style="position: fixed; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width:30px; height:30px;">
 <!--........................................Menu ends here.................................................-->
 
 <div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;"></div>
@@ -92,6 +98,7 @@ history.pushState(location,'' , location + '.html');
 }
 function getajaxfile(location)
 {
+document.getElementById('loading').style.display='block';
 var change;
 if (window.XMLHttpRequest){change=new XMLHttpRequest();}
 else {change=new ActiveXObject("Microsoft.XMLHTTP");}
@@ -99,6 +106,7 @@ change.onreadystatechange=function()
   {
   if (change.readyState==4 && change.status==200)
     {
+	document.getElementById('loading').style.display='none';
     document.getElementById("maindiv").innerHTML=change.responseText;
     };
   }
@@ -127,13 +135,6 @@ function menuappear(objectid) {
 		document.getElementById('bg').style.display='none';
 		}
 }
-
-var root = document.querySelector(":root");
-var vsize = window.outerWidth;
-var fsize = vsize/100;
-root.style.fontSize = fsize;
-
-
 //__________________________________________________________________________modernizr________________________________
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
  * http://modernizr.com/download/#-touchevents !*/
