@@ -63,11 +63,11 @@ hr {color:white
 <body>
 
 <img id="innov" src="images/innov4.png">
-	<a onClick="nav(this.id)" id="index"><img id="logo" src="images/mlogo.png"></a>
+	<a onClick="nav(this.className)" class="/index"><img id="logo" src="images/mlogo.png"></a>
 	<div id="menu">
 		<ul>
-			<li><a onClick="nav(this.id)" id="gallery">Gallery</a></li>
-			<li><a onClick="nav(this.id)" id="about">About</a></li>
+			<li><a onClick="nav(this.className)" class="/gallery">Gallery</a></li>
+			<li><a onClick="nav(this.className)" class="/about">About</a></li>
 			<li><a>Tutorials</a></li>
 		</ul>  
 	</div>
@@ -77,10 +77,10 @@ hr {color:white
 	<div class="mmenu" id="mmenu">
 	
 			<ul>
-				<a><li onClick="nav(this.id); menuappear(this.id)" id="index"><img src="images/mlogo.png" style="width:22.5em; width:40vh; max-width:90%;" id="mlogo"></li></a><hr>
-				<a><li onClick="nav(this.id); menuappear(this.id)" id="gallery">Gallery</li></a><hr>
-				<a><li onClick="nav(this.id); menuappear(this.id)" id="about">About</li></a><hr>
-				<a><li onClick="nav(this.id); menuappear(this.id)" id="tutorials">Tutorials</li></a>
+				<a><li onClick="nav(this.className); menuappear(this.id)" class="/index"><img src="images/mlogo.png" style="width:22.5em; width:40vh; max-width:90%;" id="mlogo"></li></a><hr>
+				<a><li onClick="nav(this.className); menuappear(this.id)" class="/gallery">Gallery</li></a><hr>
+				<a><li onClick="nav(this.className); menuappear(this.id)" class="/about">About</li></a><hr>
+				<a><li onClick="nav(this.className); menuappear(this.id)" class="/tutorials">Tutorials</li></a>
 			</ul>
 		</div>
 <img src="images/loading.gif" id="loading" style="position: fixed; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width:30px; height:30px;">
@@ -127,7 +127,7 @@ window.onload = function() {
     getajaxfile(exlocation);}
 }
 function menuappear(objectid) {
-	if (objectid == "button" || objectid == "mbar") {
+	if (objectid == "button") {
 		document.getElementById('mmenu').style.display='block';
 		document.getElementById('bg').style.display='block';
 		} else {
