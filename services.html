@@ -1,54 +1,16 @@
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <script>
-window.onload = function()
-{
-var loadmain;
-if (window.XMLHttpRequest){loadmain=new XMLHttpRequest();}
-else {loadmain=new ActiveXObject("Microsoft.XMLHTTP");}
-loadmain.onreadystatechange=function()
-  {
-  if (loadmain.readyState==4 && loadmain.status==200)
-    {
-    document.getElementById("headcontent").innerHTML=loadmain.responseText;
-    };
-  }
-loadmain.open("GET","/body.txt",true);
-loadmain.send();
-}
-function nav(location)
-{
-getajaxfile (location);
-history.pushState(location,'' , location + '.html');
+window.onload = function(){$("#headcontent").load("/body.txt");}
 
-}
-function getajaxfile(location)
-{
-document.getElementById('loading').style.display='block';
-var change;
-if (window.XMLHttpRequest){change=new XMLHttpRequest();}
-else {change=new ActiveXObject("Microsoft.XMLHTTP");}
-change.onreadystatechange=function()
-  {
-  if (change.readyState==4 && change.status==200)
-    {
-	document.getElementById('loading').style.display='none';
-    document.getElementById("maindiv").innerHTML=change.responseText;
-    };
-  }
-change.open("GET",location + ".html#maindiv",true);
-change.send();
-}
-window.onpopstate = function() {
-	var url = window.location.pathname;
-	var filename = url.substring(url.lastIndexOf('/')+1);
-	var exlocation = filename.split(".")[0];
+function nav(location){getajaxfile (location); history.pushState(location,'' , location + '.html');}
+function getajaxfile(location){$('#loading').show();$("#maindiv").load(location + ".html #maindiv");$('#loading').hide();}
+
+window.onpopstate = function(){
+	var url = window.location.pathname; var filename = url.substring(url.lastIndexOf('/')+1); var exlocation = filename.split(".")[0];
     getajaxfile(exlocation);
 }
-var root = document.querySelector(":root");
-var vsize = window.outerWidth;
-var fsize = vsize/100;
+var root = document.querySelector(":root"); var vsize = window.outerWidth; var fsize = vsize/100;
 root.style.fontSize = fsize;
 //__________________________________________________________________________modernizr________________________________
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
@@ -107,6 +69,6 @@ table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 @media only screen and (min-width: 800px) {
 .no-touchevents #maindiv {top:0 !important;}}
 </style>
-</div>
+</div><script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </body>
 </html>

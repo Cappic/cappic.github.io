@@ -36,7 +36,7 @@ hr {color:white
 }
 #innov {width:100%; min-width:1000px; position:fixed;  z-index: 99; left:0; 
         -webkit-filter: opacity(.5) ; filter: opacity(.5);}
-#maindiv {top:4.95vw !important}
+#maindiv {top:4.95vw}
 @media only screen and (max-width: 799px) {
 .no-touchevents #menu, .no-touchevents #logo, .no-touchevents #innov {display: none;
 }
@@ -77,11 +77,9 @@ hr {color:white
 <script>
 function menuappear(objectid) {
 	if (objectid == "button") {
-		document.getElementById('mmenu').style.display='block';
-		document.getElementById('bg').style.display='block';
+		$('#mmenu').show(); $('#bg').show();
 		} else {
-		document.getElementById('mmenu').style.display='none';
-		document.getElementById('bg').style.display='none';
+		$('#mmenu').hide(); $('#bg').hide;
 		}
 }
 </script>
