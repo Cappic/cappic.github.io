@@ -41,14 +41,14 @@ hr {color:white
 }
 .no-touchevents #button {display:inherit;
 }
-.no-touchevents #maindiv {top:0;
+.no-touchevents #maindiv {height:100%;
 }
 }
 .touchevents #menu, .touchevents #logo, .touchevents #innov {display: none;
 }
 .touchevents #button {display:inherit;
 }
-.touchevents #maindiv {top:0;
+.touchevents #maindiv {height:100%;
 }
 </style>
 <img id="innov" src="/images/innov4.png">
