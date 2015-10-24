@@ -1,5 +1,5 @@
 <style>
-body {margin:0 auto !important; background: black no-repeat fixed center top important!; background-size:cover; overflow-x:hidden !important;
+body {margin:0 auto !important; background: black no-repeat fixed center top !important; background-size:cover; overflow-x:hidden !important;
 }
 #menu {position:fixed; top:0; left:180px; z-index:100;
 }
