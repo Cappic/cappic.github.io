@@ -1,0 +1,90 @@
+<style>
+body {margin:0 auto !important; background: black no-repeat fixed center top important!; background-size:cover; overflow-x:hidden !important;
+}
+#menu {position:fixed; top:0; left:180px; z-index:100;
+}
+#menu li {display: inline; font-size: 20px; font-family: "Open Sans"; text-decoration: none; color: white;
+}
+#menu a {cursor: pointer; padding-left:2vw; text-shadow: 0 0 5px white; transition: all .25s;
+}
+#menu a:hover {color: dodgerblue; text-shadow: 0 0 5px dodgerblue;
+}
+#logo {width:200px; position:fixed; left:5px; z-index:101; cursor:pointer; margin-top:.5vw;
+}
+#logo:hover { -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,1)); filter: drop-shadow(0 0 2px rgba(255,255,255,1)); 
+}
+#mlogo:active {-webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,1)); filter: drop-shadow(0 0 2px rgba(255,255,255,1));
+}
+::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
+}
+::-webkit-scrollbar-thumb {background-color:white; border-radius: 10px;
+}
+#mmenu {background-color:black; opacity:1; left:0; top:0; height:62%; transition:all 1s; width:100%; z-index:1000; position:fixed; transform: translateZ(0); display:none;
+}
+#mmenu li {display:block; font-size:17.7rem; font-size:10vh;
+}
+#mmenu a {text-shadow: 0 0 5px white; color:white;
+}
+#mmenu li:active {color: dodgerblue; text-shadow: 0 0 5px dodgerblue;
+}
+hr {color:white
+}
+#button {left:0; max-height:20%; min-height:10%; top:0; z-index:99; position:fixed; height:14rem; height:14vw; display:none;
+}
+
+#bg {background-color:black; left:0; top:0; height:100%; width:100%; opacity:0.5; position:fixed; z-index:2; display:none
+}
+#innov {width:100%; min-width:1000px; position:fixed;  z-index: 99; left:0; 
+        -webkit-filter: opacity(.5) ; filter: opacity(.5);}
+@media only screen and (max-width: 799px) {
+.no-touchevents #menu, .no-touchevents #logo, .no-touchevents #innov {display: none;
+}
+.no-touchevents #button {display:inherit;
+}
+.no-touchevents #maindiv {top:0;
+}
+}
+.touchevents #menu, .touchevents #logo, .touchevents #innov {display: none;
+}
+.touchevents #button {display:inherit;
+}
+.touchevents #maindiv {top:0;
+}
+</style>
+<img id="innov" src="/images/innov4.png">
+	<a onClick="nav(this.className)" class="/index"><img id="logo" src="/images/mlogo.png"></a>
+	<div id="menu">
+		<ul>
+			<li><a onClick="nav(this.className)" class="/gallery">Gallery</a></li>
+			<li><a onClick="nav(this.className)" class="/about">About</a></li>
+			<li><a>Tutorials</a></li>
+		</ul>  
+	</div>
+	
+<div id="bg" onClick="menuappear(this.id)"></div>
+	<img src="/images/mbutton.png" id="button" onClick="menuappear(this.id)">
+	<div class="mmenu" id="mmenu">
+	
+			<ul>
+				<a><li onClick="nav(this.className); menuappear(this.id)" class="/index"><img src="/images/mlogo.png" style="width:22.5em; width:40vh; max-width:90%;" id="mlogo"></li></a><hr>
+				<a><li onClick="nav(this.className); menuappear(this.id)" class="/gallery">Gallery</li></a><hr>
+				<a><li onClick="nav(this.className); menuappear(this.id)" class="/about">About</li></a><hr>
+				<a><li onClick="nav(this.className); menuappear(this.id)" class="/tutorials">Tutorials</li></a>
+			</ul>
+		</div>
+<img src="/images/loading.gif" id="loading" style="position: fixed; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width:30px; height:30px; display:hidden;">
+<script>
+function menuappear(objectid) {
+	if (objectid == "button") {
+		document.getElementById('mmenu').style.display='block';
+		document.getElementById('bg').style.display='block';
+		} else {
+		document.getElementById('mmenu').style.display='none';
+		document.getElementById('bg').style.display='none';
+		}
+}
+</script>
+<link rel="shortcut icon" href="/favicon.ico" />
+<style>@font-face {font-family: 'Open Sans'; font-style: normal; font-weight: 400; src: url(../fonts/OpenSans-Regular.ttf)}
+@font-face {font-family: 'Lato'; font-style: normal; font-weight: 300; src: url(../fonts/Lato-Light.ttf)}
+</style>

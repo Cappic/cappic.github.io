@@ -1,6 +1,0 @@
-<title>Cappic Photography - Services</title>
-<iframe src="https://docs.google.com/forms/d/1K-Fc22n8izM9BqZp0hQNV_TzdzOKZyAaFljys1e2M80/viewform?embedded=true&amp;bc=transparent" align="bottom" height="100%" width="100%" frameborder="0"></iframe>
-<style>body {overflow:hidden; background-image: url("images/bg.jpg")}
-@media only screen and (min-width: 800px) {
-.no-touchevents #maindiv {top:0 !important;}}
-</style>

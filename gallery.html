@@ -1,95 +1,22 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<script>var root = document.querySelector(":root");
-var vsize = window.outerWidth;
-var fsize = vsize/100;
-root.style.fontSize = fsize;
-</script>
-<style>
-body {margin:0 auto; background: black no-repeat fixed center top; background-size:cover; overflow-x:hidden !important;
-}
-#menu {position:fixed; top:0; left:180px; z-index:100;
-}
-#menu li {display: inline; font-size: 20px; font-family: "Open Sans"; text-decoration: none; color: white;
-}
-#menu a {cursor: pointer; padding-left:2vw; text-shadow: 0 0 5px white; transition: all .25s;
-}
-#menu a:hover {color: dodgerblue; text-shadow: 0 0 5px dodgerblue;
-}
-#logo {width:200px; position:fixed; left:5px; z-index:101; cursor:pointer; margin-top:.5vw;
-}
-#logo:hover { -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,1)); filter: drop-shadow(0 0 2px rgba(255,255,255,1)); 
-}
-#mlogo:active {-webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,1)); filter: drop-shadow(0 0 2px rgba(255,255,255,1));
-}
-::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
-}
-::-webkit-scrollbar-thumb {background-color:white; border-radius: 10px;
-}
-#mmenu {background-color:black; opacity:1; left:0; top:0; height:62%; transition:all 1s; width:100%; z-index:1000; position:fixed; transform: translateZ(0); display:none;
-}
-#mmenu li {display:block; font-size:17.7rem; font-size:10vh;
-}
-#mmenu a {text-shadow: 0 0 5px white; color:white;
-}
-#mmenu li:active {color: dodgerblue; text-shadow: 0 0 5px dodgerblue;
-}
-hr {color:white
-}
-#button {left:0; max-height:20%; min-height:10%; top:0; z-index:99; position:fixed; height:14rem; height:14vw; display:none;
-}
-
-#bg {background-color:black; left:0; top:0; height:100%; width:100%; opacity:0.5; position:fixed; z-index:2; display:none
-}
-#innov {width:100%; min-width:1000px; position:fixed;  z-index: 99; left:0; 
-        -webkit-filter: opacity(.5) ; filter: opacity(.5);}
-@media only screen and (max-width: 799px) {
-.no-touchevents #menu, .no-touchevents #logo, .no-touchevents #innov {display: none;
-}
-.no-touchevents #button {display:inherit;
-}
-.no-touchevents #maindiv {top:0;
-}
-}
-.touchevents #menu, .touchevents #logo, .touchevents #innov {display: none;
-}
-.touchevents #button {display:inherit;
-}
-.touchevents #maindiv {top:0;
-}
-</style>
-</head>
-<body>
-
-<img id="innov" src="images/innov4.png">
-	<a onClick="nav(this.className)" class="/index"><img id="logo" src="images/mlogo.png"></a>
-	<div id="menu">
-		<ul>
-			<li><a onClick="nav(this.className)" class="/gallery">Gallery</a></li>
-			<li><a onClick="nav(this.className)" class="/about">About</a></li>
-			<li><a>Tutorials</a></li>
-		</ul>  
-	</div>
-	
-<div id="bg" onClick="menuappear(this.id)"></div>
-	<img src="images/mbutton.png" id="button" onClick="menuappear(this.id)">
-	<div class="mmenu" id="mmenu">
-	
-			<ul>
-				<a><li onClick="nav(this.className); menuappear(this.id)" class="/index"><img src="images/mlogo.png" style="width:22.5em; width:40vh; max-width:90%;" id="mlogo"></li></a><hr>
-				<a><li onClick="nav(this.className); menuappear(this.id)" class="/gallery">Gallery</li></a><hr>
-				<a><li onClick="nav(this.className); menuappear(this.id)" class="/about">About</li></a><hr>
-				<a><li onClick="nav(this.className); menuappear(this.id)" class="/tutorials">Tutorials</li></a>
-			</ul>
-		</div>
-<img src="images/loading.gif" id="loading" style="position: fixed; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width:30px; height:30px;">
-<!--........................................Menu ends here.................................................-->
-
-<div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;"></div>
-<!--_________________________________maindiv end____________________________________________-->
-
 <script>
+window.onload = function()
+{
+var loadmain;
+if (window.XMLHttpRequest){loadmain=new XMLHttpRequest();}
+else {loadmain=new ActiveXObject("Microsoft.XMLHTTP");}
+loadmain.onreadystatechange=function()
+  {
+  if (loadmain.readyState==4 && loadmain.status==200)
+    {
+    document.getElementById("headcontent").innerHTML=loadmain.responseText;
+    };
+  }
+loadmain.open("GET","/body.txt",true);
+loadmain.send();
+}
 function nav(location)
 {
 getajaxfile (location);
@@ -110,7 +37,7 @@ change.onreadystatechange=function()
     document.getElementById("maindiv").innerHTML=change.responseText;
     };
   }
-change.open("GET",location + ".txt",true);
+change.open("GET",location + ".html#maindiv",true);
 change.send();
 }
 window.onpopstate = function() {
@@ -119,22 +46,10 @@ window.onpopstate = function() {
 	var exlocation = filename.split(".")[0];
     getajaxfile(exlocation);
 }
-window.onload = function() {
-	if (location.pathname == "/")getajaxfile("index");else{
-        var url = window.location.pathname;
-	var filename = url.substring(url.lastIndexOf('/')+1);
-	var exlocation = filename.split(".")[0];
-    getajaxfile(exlocation);}
-}
-function menuappear(objectid) {
-	if (objectid == "button") {
-		document.getElementById('mmenu').style.display='block';
-		document.getElementById('bg').style.display='block';
-		} else {
-		document.getElementById('mmenu').style.display='none';
-		document.getElementById('bg').style.display='none';
-		}
-}
+var root = document.querySelector(":root");
+var vsize = window.outerWidth;
+var fsize = vsize/100;
+root.style.fontSize = fsize;
 //__________________________________________________________________________modernizr________________________________
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
  * http://modernizr.com/download/#-touchevents !*/
@@ -163,7 +78,6 @@ m(o,function(e){t=9===e.offsetTop})}return t}),s(),a(f),delete d.addTest,delete 
 Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
 //_____________________________________________________modernizr end_______________________________________________________
 </script>
-<!--_____________________________________normalizr_-->
 <style>
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
@@ -183,10 +97,69 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset
 margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}
 table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 </style>
-<!--____________________________________________normalizr end-->
-<link rel="shortcut icon" href="favicon.ico" />
-<style>@font-face {font-family: 'Open Sans'; font-style: normal; font-weight: 400; src: url(fonts/OpenSans-Regular.ttf)}
-@font-face {font-family: 'Lato'; font-style: normal; font-weight: 300; src: url(fonts/Lato-Light.ttf)}
+</head>
+<body>
+<div id="headcontent"></div>
+<div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
+<title>Cappic Photography - Gallery</title>
+<style>
+body {background-image: url("../images/bg.jpg")}
+
+.commonpanel {transition:height 0.75s; transform: translateZ(0)}
+.commonpanel:hover {cursor:pointer;}
+.commonpanel pre {font-size: 7rem; font-size:7vmin; transition: all 1s; font-family:"Open Sans"; text-align: center; display:inline; box-shadow:none }
+.commonpanel:hover pre {font-size: 9rem; font-size:9vmin; font-weight:bold; text-shadow: 0 0 5px black; }
+.commonpanel span {opacity:0; font-size:1rem; font-size:1vmin; text-shadow: 0 0 5px black; font-weight:bold;  transition: all 1s }
+.commonpanel:hover span {opacity:1; font-size:9rem; font-size:9vmin; }
+
+#panel-1 { background-color: lime;}
+#panel-1:hover {color:lime;}
+#panel-1 span {color:lime;}
+
+#panel-2 { background-color: red;}
+#panel-2:hover {color:red;}
+#panel-2 span {color:red}
+
+#panel-3 { background-color: yellow;}
+#panel-3:hover {color:yellow;}
+#panel-3 span {color:yellow}
+
+a { color: inherit; text-decoration:none }
+
+.panel { list-style-type: none; display:block; top:5rem; top:5vmin; position:absolute; width:100%;
+}
+
+        .touchevents #panel-1 {color:lime;}
+	.touchevents #panel-2 {color:red;}
+	.touchevents #panel-3 {color:yellow;}
+	
+	.touchevents .commonpanel pre {font-size:9rem; font-size:9vmin; font-weight:bold; text-shadow: 0 0 5px black; }
+	.touchevents .commonpanel span {font-size:9rem; font-size:9vmin; opacity:1;}
+        
+@media only screen and (min-width: 800px) {
+.no-touchevents #maindiv {top:4.95vw !important;}}
 </style>
+
+<div class='panel'><center>
+						<a onClick="nav(this.id)" id="akshay"><li class="commonpanel" id='panel-1'>
+<pre>
+<span>View
+</span>Akshaydeep Sharma<span>'s
+Photography</span>
+</pre></li></a>
+						<a href="sankalp.html"><li class="commonpanel" id='panel-2'>
+<pre>
+<span>View
+</span>Sankalp Sagar<span>'s
+Photography</span>
+</pre></li></a>
+						<a href="adhyan.html"><li class="commonpanel" id='panel-3'>
+<pre>
+<span>View
+</span>Adhyan Mall<span>'s
+Photography</span>
+</pre></li></a>
+					</center></div>
+</div>
 </body>
 </html>
