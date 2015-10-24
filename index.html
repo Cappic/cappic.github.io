@@ -4,7 +4,7 @@
 window.onload = function(){$("#headcontent").load("/body.txt");}
 
 function nav(location){getajaxfile (location); history.pushState(location,'' , location + '.html');}
-function getajaxfile(location){$('#loading').show();$("#maindiv").load(location + ".html #maindiv");$('#loading').hide();}
+function getajaxfile(location){$('#loading').show();$("#mainwrapper").load(location + ".html #maindiv");$('#loading').hide();}
 
 window.onpopstate = function(){
 	var url = window.location.pathname; var filename = url.substring(url.lastIndexOf('/')+1); var exlocation = filename.split(".")[0];
@@ -62,7 +62,7 @@ table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 </head>
 <body>
 <div id="headcontent"></div>
-<div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
 <title>Cappic Photography</title>
 <style>
 .content {
@@ -138,6 +138,6 @@ with each picture having a number of distinct characteristics and innovation.</s
 <a onClick="nav(this.className)" class="/tutorials"><td id="content3">
 <span class="light title">Amazing Photography </span><br><span class="bold title">TUTORIALS</span>
 </td></a></tr></table>
-</div><script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+</div></div><script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </body>
 </html>

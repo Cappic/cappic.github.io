@@ -4,7 +4,7 @@
 window.onload = function(){$("#headcontent").load("/body.txt");}
 
 function nav(location){getajaxfile (location); history.pushState(location,'' , location + '.html');}
-function getajaxfile(location){$('#loading').show();$("#maindiv").load(location + ".html #maindiv");$('#loading').hide();}
+function getajaxfile(location){$('#loading').show();$("#mainwrapper").load(location + ".html #maindiv");$('#loading').hide();}
 
 window.onpopstate = function(){
 	var url = window.location.pathname; var filename = url.substring(url.lastIndexOf('/')+1); var exlocation = filename.split(".")[0];
@@ -60,111 +60,15 @@ margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overf
 table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 </style>
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<script>
-window.onload = function()
-{
-var loadmain;
-if (window.XMLHttpRequest){loadmain=new XMLHttpRequest();}
-else {loadmain=new ActiveXObject("Microsoft.XMLHTTP");}
-loadmain.onreadystatechange=function()
-  {
-  if (loadmain.readyState==4 && loadmain.status==200)
-    {
-    document.getElementById("headcontent").innerHTML=loadmain.responseText;
-    };
-  }
-loadmain.open("GET","/body.txt",true);
-loadmain.send();
-}
-function nav(location)
-{
-getajaxfile (location);
-history.pushState(location,'' , location + '.html');
-
-}
-function getajaxfile(location)
-{
-document.getElementById('loading').style.display='block';
-var change;
-if (window.XMLHttpRequest){change=new XMLHttpRequest();}
-else {change=new ActiveXObject("Microsoft.XMLHTTP");}
-change.onreadystatechange=function()
-  {
-  if (change.readyState==4 && change.status==200)
-    {
-	document.getElementById('loading').style.display='none';
-    document.getElementById("maindiv").innerHTML=change.responseText;
-    };
-  }
-change.open("GET",location + ".html#maindiv",true);
-change.send();
-}
-window.onpopstate = function() {
-	var url = window.location.pathname;
-	var filename = url.substring(url.lastIndexOf('/')+1);
-	var exlocation = filename.split(".")[0];
-    getajaxfile(exlocation);
-}
-var root = document.querySelector(":root");
-var vsize = window.outerWidth;
-var fsize = vsize/100;
-root.style.fontSize = fsize;
-//__________________________________________________________________________modernizr________________________________
-/*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
- * http://modernizr.com/download/#-touchevents !*/
-!function(e,n,t){function o(e,n){return typeof e===n}function s(){var e,n,t,s,a,i,r;for(var l in c)
-{if(e=[],n=c[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))
-for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=o(n.fn,"function")?n.fn()
-:n.fn,a=0;a<e.length;a++)i=e[a],r=i.split("."),1===r.length?Modernizr[r[0]]=s:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||
-(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=s),f.push((s?"":"no-")+r.join("-"))}}
-function a(e){var n=u.className,t=Modernizr._config.classPrefix||"";if(p&&(n=n.baseVal),Modernizr._config.enableJSClass)
-{var o=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(o,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t)
-,p?u.className.baseVal=n:u.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0])
-:p?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function r()
-{var e=n.body;return e||(e=i(p?"svg":"body"),e.fake=!0),e}function l(e,t,o,s){var a,l,f,c,d="modernizr",p=i("div"),h=r();
-if(parseInt(o,10))for(;o--;)f=i("div"),f.id=s?s[o]:d+(o+1),p.appendChild(f);return a=i("style"),a.type="text/css",a.id="s"+d,
-(h.fake?h:p).appendChild(a),h.appendChild(p),a.styleSheet?a.styleSheet.cssText=e:a.appendChild(n.createTextNode(e)),p.id=d,
-h.fake&&(h.style.background="",h.style.overflow="hidden",c=u.style.overflow,u.style.overflow="hidden",u.appendChild(h)),
-l=t(p,e),h.fake?(h.parentNode.removeChild(h),u.style.overflow=c,u.offsetHeight):p.parentNode.removeChild(p),!!l}
-var f=[],c=[],d={_version:"3.0.0-alpha.4",_config:{classPrefix:"",enableClasses:!0,
-enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},
-addTest:function(e,n,t){c.push({name:e,fn:n,options:t})},addAsyncTest:function(e){c.push({name:null,fn:e})}},
-Modernizr=function(){};Modernizr.prototype=d,Modernizr=new Modernizr;var u=n.documentElement,p="svg"===u.nodeName.toLowerCase()
-,h=d._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):[];d._prefixes=h;var m=d.testStyles=l;
-Modernizr.addTest("touchevents",function(){var t;if("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch)
-t=!0;else{var o=["@media (",h.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join("");
-m(o,function(e){t=9===e.offsetTop})}return t}),s(),a(f),delete d.addTest,delete d.addAsyncTest;for(var v=0;v<Modernizr._q.length;v++)
-Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
-//_____________________________________________________modernizr end_______________________________________________________
-</script>
-<style>
-html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
-article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
-audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],
-template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,
-strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}
-small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}
-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
-pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea
-{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],/* 1 */
-input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}
-button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],
-input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;
--moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;
-margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}
-table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
-</style>
-</head>
 <body>
 <div id="headcontent"></div>
-<div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
 <title>Cappic Photography - Akshaydeep Sharma</title>
 <iframe src="//cappicphotography.pixieset.com/akshay/" align="bottom" height="100%" width="100%" frameborder="0"></iframe>
 <style>body {overflow:hidden;}
+@media only screen and (min-width: 800px) {
+.no-touchevents #maindiv {top:4.95vw !important;}}
 </style>
-</div><script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+</div></div><script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </body>
 </html>

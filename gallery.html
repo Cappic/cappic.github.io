@@ -4,7 +4,7 @@
 window.onload = function(){$("#headcontent").load("/body.txt");}
 
 function nav(location){getajaxfile (location); history.pushState(location,'' , location + '.html');}
-function getajaxfile(location){$('#loading').show();$("#maindiv").load(location + ".html #maindiv");$('#loading').hide();}
+function getajaxfile(location){$('#loading').show();$("#mainwrapper").load(location + ".html #maindiv");$('#loading').hide();}
 
 window.onpopstate = function(){
 	var url = window.location.pathname; var filename = url.substring(url.lastIndexOf('/')+1); var exlocation = filename.split(".")[0];
@@ -62,7 +62,7 @@ table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 </head>
 <body>
 <div id="headcontent"></div>
-<div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
 <title>Cappic Photography - Gallery</title>
 <style>
 body {background-image: url("../images/bg.jpg") !important}
@@ -120,6 +120,6 @@ Photography</span>
 Photography</span>
 </pre></li></a>
 					</center></div>
-</div>
+</div></div>
 </body><script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </html>

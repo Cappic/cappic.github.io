@@ -4,7 +4,7 @@
 window.onload = function(){$("#headcontent").load("/body.txt");}
 
 function nav(location){getajaxfile (location); history.pushState(location,'' , location + '.html');}
-function getajaxfile(location){$('#loading').show();$("#maindiv").load(location + ".html #maindiv");$('#loading').hide();}
+function getajaxfile(location){$('#loading').show();$("#mainwrapper").load(location + ".html #maindiv");$('#loading').hide();}
 
 window.onpopstate = function(){
 	var url = window.location.pathname; var filename = url.substring(url.lastIndexOf('/')+1); var exlocation = filename.split(".")[0];
@@ -62,13 +62,13 @@ table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 </head>
 <body>
 <div id="headcontent"></div>
-<div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;">
 <title>Cappic Photography - Services</title>
 <iframe src="https://docs.google.com/forms/d/1K-Fc22n8izM9BqZp0hQNV_TzdzOKZyAaFljys1e2M80/viewform?embedded=true&amp;bc=transparent" align="bottom" height="100%" width="100%" frameborder="0"></iframe>
 <style>body {overflow:hidden; background-image: url("images/bg.jpg") !important}
 @media only screen and (min-width: 800px) {
 .no-touchevents #maindiv {top:0 !important;}}
 </style>
-</div><script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+</div></div><script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </body>
 </html>
