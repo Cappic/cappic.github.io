@@ -36,20 +36,19 @@ hr {color:white
 }
 #innov {width:100%; min-width:1000px; position:fixed;  z-index: 99; left:0; 
         -webkit-filter: opacity(.5) ; filter: opacity(.5);}
-#maindiv {top:4.95vw}
 @media only screen and (max-width: 799px) {
 .no-touchevents #menu, .no-touchevents #logo, .no-touchevents #innov {display: none;
 }
 .no-touchevents #button {display:inherit;
 }
-.no-touchevents #maindiv {top:0;
+.no-touchevents #maindiv {top:0 !important;
 }
 }
 .touchevents #menu, .touchevents #logo, .touchevents #innov {display: none;
 }
 .touchevents #button {display:inherit;
 }
-.touchevents #maindiv {top:0;
+.touchevents #maindiv {top:0; !important
 }
 </style>
 <img id="innov" src="/images/innov4.png">
