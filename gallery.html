@@ -81,82 +81,64 @@ Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
 </head>
 <body>
 <div id="headcontent"></div>
-<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;top:10%">
-<title>Cappic Photography</title>
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;top:10%;">
+<title>Cappic Photography - Gallery</title>
 <style>
-.content {
-width:300%; height:50%; bottom:0; left:-100%; text-align:center; transform: translateZ(0); 
-position:absolute; cursor:pointer; table-layout:fixed; border-spacing:0px;
-animation: anione 30s infinite; -webkit-animation: anione 30s infinite; -moz-animation: anione 30s infinite;
+body {background-image: url("../images/bg.jpg") !important}
+
+.commonpanel {transition:height 0.75s; transform: translateZ(0)}
+.commonpanel:hover {cursor:pointer;}
+.commonpanel pre {font-size: 7rem; font-size:7vmin; transition: all 1s; font-family:"Roboto"; text-align: center; display:inline; box-shadow:none }
+.commonpanel:hover pre {font-size: 9rem; font-size:9vmin; font-weight:bold; text-shadow: 0 0 5px black; }
+.commonpanel span {opacity:0; font-size:1rem; font-size:1vmin; text-shadow: 0 0 5px black; font-weight:bold;  transition: all 1s }
+.commonpanel:hover span {opacity:1; font-size:9rem; font-size:9vmin; }
+
+#panel-1 { background-color: slateblue;}
+#panel-1:hover {color:slateblue;}
+#panel-1 span {color:slateblue;}
+
+#panel-2 { background-color: orangered;}
+#panel-2:hover {color:orangered;}
+#panel-2 span {color:orangered}
+
+#panel-3 { background-color: slateblue;}
+#panel-3:hover {color:slateblue;}
+#panel-3 span {color:slateblue}
+
+a { color: inherit; text-decoration:none }
+
+.panel { list-style-type: none; display:block; top:5rem; top:5vmin; position:absolute; width:100%;
 }
 
-.no-touchevents .content:hover {
-animation:paused; -webkit-animation:paused; -moz-animation:paused; width:100%; height:100%; left:0; 
-}
-
-#content1 {
-background-color:crimson;
-}
-
-#content2 {
-background-color:dodgerblue;
-}
-
-#content3 {
-background-color:crimson;
-}
-
-td a {height:100%; display:block;}
-
-@keyframes anione {
-32% {left:-100%;} 34% {left:-200%;} 65% {left: -200%} 67% {left:0} 98% {left:0} 100% {left:-100%}
-}
-@-moz-keyframes anione {
-32% {left:-100%;} 34% {left:-200%;} 65% {left: -200%} 67% {left:0} 98% {left:0} 100% {left:-100%}
-}
-@-webkit-keyframes anione {
-32% {left:-100%;} 34% {left:-200%;} 65% {left: -200%} 67% {left:0} 98% {left:0} 100% {left:-100%}
-}
-
-.title {
-font-family:'Lato'; font-size: 14.2rem; font-size:8vh;
-}
-
-.bold {
-font-weight:900;
-}
-
-.light {
-font-weight:100;
-}
-
-.description {
-font-family:'Roboto'; font-size: 6.25rem; font-size:4vh;
-}
-
-a {
-text-decoration:none; color:inherit;
-}
-
-body {background-image: url('../images/bg.jpg') !important; overflow:hidden;}
+        .touchevents #panel-1 {color:slateblue;}
+	.touchevents #panel-2 {color:orangered;}
+	.touchevents #panel-3 {color:slateblue;}
+	
+	.touchevents .commonpanel pre {font-size:9rem; font-size:9vmin; font-weight:bold; text-shadow: 0 0 5px black; }
+	.touchevents .commonpanel span {font-size:9rem; font-size:9vmin; opacity:1;}
+        
 </style>
 
-<table class="content"><tr>
-<td id="content1"><a onClick="nav(this.className)" class="/about">
-<span class="bold title">ABOUT </span><span class="light title">Cappic</span><br>
-<span class="light description">Cappic specializes in capturing innovative pictures,
-use the current technology to enhance them and make them even more innovative and creative.
-The company has more than 2000 pictures in its database
-with each picture having a number of distinct characteristics and innovation.</span>
-</a></td>
-
-<td id="content2"><a onClick="nav(this.className)" class="/gallery" style="display:block">
-<span class="light title">Enter the </span><span class="bold title">GALLERY</span>
-</a></td>
-
-<a onClick="nav(this.className)" class="/tutorials"><td id="content3">
-<span class="light title">Amazing Photography </span><br><span class="bold title">TUTORIALS</span>
-</td></a></tr></table>
+<div class='panel'><center>
+						<a onClick="nav(this.id)" id="akshay"><li class="commonpanel" id='panel-1'>
+<pre>
+<span>View
+</span>Akshaydeep Sharma<span>'s
+Photography</span>
+</pre></li></a>
+						<a href="sankalp.html"><li class="commonpanel" id='panel-2'>
+<pre>
+<span>View
+</span>Sankalp Sagar<span>'s
+Photography</span>
+</pre></li></a>
+						<a href="adhyan.html"><li class="commonpanel" id='panel-3'>
+<pre>
+<span>View
+</span>Adhyan Mall<span>'s
+Photography</span>
+</pre></li></a>
+					</center></div>
 </div></div>
 </body>
 </html>
