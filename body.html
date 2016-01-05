@@ -78,7 +78,22 @@ hr {color:white
 		</div>
 <img src="/images/loading.gif" id="loading" style="position: fixed; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width:30px; height:30px; display:none;">
 <div id="fb-root"></div>
-<script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 'your-app-id',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div id="fbanner">
 <div style="float:left; background-color:#3b5998; width:2em; height:70px; position:absolute; right:100%;">
 <img src="/images/arrow.png" height="16px" style="width:1em; position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);">
