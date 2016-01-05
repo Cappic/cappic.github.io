@@ -79,6 +79,11 @@ hr {color:white
 <img src="/images/loading.gif" id="loading" style="position: fixed; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width:30px; height:30px; display:none;">
 <div id="fb-root"></div>
 <script>
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 'your-app-id',
+      xfbml      : true,
+ 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
