@@ -52,7 +52,13 @@ hr {color:white
 }
 .touchevents #maindiv {top:0;
 }
-.no-touchevents #fbbutton {max-width:15px;
+@media only screen and (orientation: portrait) {
+.touchevents #fbbutton {min-width:5%;
+}
+}
+@media only screen and (orientation: landscape) {
+.touchevents #fbbutton {min-width:2%;
+}
 }
 
 </style>
@@ -88,7 +94,7 @@ hr {color:white
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <div onmouseenter="openfb()" onmouseleave="closefb()">
-<div class="fbanner" id="fbbutton" style="width:2em; right:0;" onclick="fbbutton()">
+<div class="fbanner" id="fbbutton" style="width:25px; right:0;" onclick="fbbutton()">
 <img src="images/arrow.png" style="width:50%; position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);">
 </div>
 <div class="fbanner" id="fbcontainer" style="width:225px; right:-225px;">
