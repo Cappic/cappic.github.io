@@ -118,11 +118,6 @@ function inview(elem)
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
-$(document).ready(function(){
-    $("#test").click(function(){
-        alert("The paragraph was clicked.");
-    });
-});
 </script>
 
 <div id="mission">
@@ -133,9 +128,6 @@ $(document).ready(function(){
 <p id="4l">and the simplest</p>
 <p id="5l" class="bigmission">Photoshop Tutorials</p>
 </div>
-
-<button id="test" style="left:0;top:50%;font-size:30px;position:fixed;">Click me!</button>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </div></div>
