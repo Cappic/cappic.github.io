@@ -36,6 +36,7 @@ change.onreadystatechange=function()
     {
 	document.getElementById('loading').style.display='none';
     document.getElementById("mainwrapper").innerHTML=change.responseText;
+	eval(document.getElementById("mainwrapper").innerHTML);
     };
   }
 change.open("GET",location + ".html#maindiv",true);
