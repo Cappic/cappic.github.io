@@ -5,41 +5,20 @@
 <script>
 window.onload = function()
 {
-var loadmain;
-if (window.XMLHttpRequest){loadmain=new XMLHttpRequest();}
-else {loadmain=new ActiveXObject("Microsoft.XMLHTTP");}
-loadmain.onreadystatechange=function()
-  {
-  if (loadmain.readyState==4 && loadmain.status==200)
-    {
-    document.getElementById("headcontent").innerHTML=loadmain.responseText;
-    };
-  }
-loadmain.open("GET","/body.html",true);
-loadmain.send();
+$("#headcontent").load("body.html");
 }
 function nav(location)
 {
 getajaxfile (location);
 history.pushState(location,'' , location + '.html');
-
 }
 function getajaxfile(location)
 {
-document.getElementById('loading').style.display='block';
-var change;
-if (window.XMLHttpRequest){change=new XMLHttpRequest();}
-else {change=new ActiveXObject("Microsoft.XMLHTTP");}
-change.onreadystatechange=function()
-  {
-  if (change.readyState==4 && change.status==200)
-    {
-	document.getElementById('loading').style.display='none';
-    document.getElementById("mainwrapper").innerHTML=change.responseText;
-    };
-  }
-change.open("GET",location + ".html#maindiv",true);
-change.send();
+$('#loading').show();
+$.ajax({url: location + ".html#maindiv", success: function(result){
+        $("#mainwrapper").html(result);
+		$("#loading").hide();
+    }});
 }
 window.onpopstate = function() {
 	var url = window.location.pathname;
@@ -88,5 +67,6 @@ Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
 <style>body {overflow:hidden; background-image: url("images/bg.jpg") !important}
 </style>
 </div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
 </html>
