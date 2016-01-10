@@ -61,25 +61,30 @@ Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
 </head>
 <body>
 <div id="headcontent"></div>
-<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;top:10%;">
+<div id="mainwrapper"><div id="maindiv">
 <title>About Us - Cappic Photography</title>
 <style>
-body {background-image: url(images/1.jpg); transition:all 0.5s}
-#mission {left:50%; top:0; transform:translate(-50%,); position:absolute; text-align:center; font-size:3rem; background-color:rgba(0,0,0,0.5) ; width:100%; color:white; font-family: "Roboto";}
+body {transition:all 0.5s}
+#maindiv {top:10%; left:0; position:absolute; text-align:center; font-size:2rem; width:100%; color:white; font-family: "Roboto";}
+a {text-decoration:none; color:white;}
 .bigmission {font-size:7rem;}
+.title {font-family:'Lato'; font-size:7rem;}
 </style>
 <script>
-document.body.onscroll=function(){
-if((inview("#4l"))&&(inview("#5l")==false)) {
-	$(document.body).css({"background-image":"url('images/2.jpg')"});
-	}
-else if((inview("#1l"))&&(inview("#3l")==false)) {
+window.onload = changebg;
+document.body.onscroll = changebg;
+function changebg(){
+
+	if(inview("#1l")) {
 	$(document.body).css({"background-image":"url('images/1.jpg')"});
 	}
-else if((inview("#5l"))&&(inview("#2l")==false)) {
+else if((inview("#3l"))&&(inview("#1l")==false)) {
+	$(document.body).css({"background-image":"url('images/2.jpg')"});
+	}
+else if((inview("#5l"))&&(inview("#3l")==false)) {
 	$(document.body).css({"background-image":"url('images/3.jpg')"});
 	}
-else if((inview("#1l")==false)&&(inview("#2l")==false)&&(inview("#3l")==false)) {
+else{
 	$(document.body).css({"background-image":"url('images/bg.jpg')"});
 	}
 }
@@ -99,17 +104,49 @@ function inview(elem)
 }
 </script>
 
-<div id="mission">
+<div style="background-color:rgba(0,0,0,0.5); font-size:3rem">
 <br><br><br>
 <p id="1l" class="bigmission">OUR MISSION</p>
 <p id="2l">is to provide the best</p>
 <p id="3l" class="bigmission">Photography Services</p>
 <p id="4l">and the simplest</p>
 <p id="5l" class="bigmission">Photoshop Tutorials</p>
+<br>
 </div>
-<div><br><br>jfdklsjdkjfkjklfdjlkjfdskljfksjlkdjflkjslkjlksdjfdlksjflksjlkfdjkdjslkfjdskljfajfoaeoij</div>
-
-
+<br>
+<center>
+<div style="color:black; width:80%;">
+<p class="title">The Story</p>
+Cappic is an Indian company of a developer cum photographer Manas Khurana which was founded in 2014.
+The developer got an idea of sharing his innovation with the world and there was no better place for
+ doing it other than Internet. So, he set out on this mission with almost no experience,
+ working hard to shoot pictures and share it on their website to the world.
+<br><br>
+Cappic specializes in capturing innovative pictures, use the current technology to enhance them and make
+ them even more innovative and creative. With over 2,000 pictures in the company's database each has a number
+ of distinct characteristics and innovation.
+<br><br>
+Cappic excels in capturing professional level high quality photos each having a specialization of its own.
+ All the photos captured by us can be purchased. To purchase any of the picture, the interested person has
+ to contact one of the developers.
+</div>
+<div style="background-color:rgba(0,255,125,0.75); width:50%; height:35rem;">
+<div class="title"><p></p>Contact Us</div>
+<p style="font-size:3rem;">Manas Khurana</p>
+<p>
+<a href="mailto:manas.khurana20@gmail.com">
+<img src="../images/gm.png" style="width:50px;">
+manas.khurana20@gmail.com
+</a>
+<br>
+<a href="https://facebook.com/20manas">
+<img src="../images/fb.png" style="width:50px;">
+facebook.com/20manas
+</a>
+</p>
+</div>
+</center>
+<br><br><br>
 </div></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
