@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <style>body{background:no-repeat fixed center top}</style>
 <script>
-window.onload = function()
+function loadbody()
 {
 $("#headcontent").load("body.html");
 }
@@ -66,6 +66,6 @@ Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
 <iframe src="//cappicphotography.pixieset.com/akshay/" align="bottom" height="100%" width="100%" frameborder="0"></iframe>
 <style>body {overflow:hidden;background-color:black;background-image:none;}</style>
 </div></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
 </body>
 </html>

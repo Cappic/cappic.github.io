@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <style>body{background:no-repeat fixed center top}</style>
 <script>
-window.onload = function()
+function loadbody()
 {
 $("#headcontent").load("body.html");
 }
@@ -65,14 +65,14 @@ Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
 <title>About Us - Cappic Photography</title>
 <style>
 body {transition:all 0.5s}
-#page {position:absolute; text-align:center; font-size:2rem; width:100%; color:white; font-family: "Roboto";}
+#page {position:absolute; text-align:center; font-size:28px; width:100%; color:white; font-family: "Roboto";}
 a {text-decoration:none; color:white;}
 .bigmission {font-size:7rem;}
 .title {font-family:'Lato'; font-size:7rem;}
 </style>
 <script>
-window.onload = changebg;
 document.body.onscroll = changebg;
+window.onload = changebg;
 function changebg(){
 
 	if(inview("#1l")) {
@@ -130,17 +130,17 @@ Cappic excels in capturing professional level high quality photos each having a 
  All the photos captured by us can be purchased. To purchase any of the picture, the interested person has
  to contact one of the developers.
 </div>
-<div style="background-color:rgba(0,255,100,0.75); width:50%; height:35rem;">
+<div style="background-color:rgba(0,255,100,0.75); width:50%; min-width:500px; height:35rem;">
 <div class="title"><p></p>Contact Us</div>
 <p style="font-size:3rem;">Manas Khurana</p>
 <p>
 <a href="mailto:manas.khurana20@gmail.com">
-<img src="../images/gm.png" style="width:50px;">
+<img src="images/gm.png" style="width:4rem; max-width:100px;">
 manas.khurana20@gmail.com
 </a>
 <br>
 <a href="https://facebook.com/20manas">
-<img src="../images/fb.png" style="width:50px;">
+<img src="images/fb.png" style="width:4rem; max-width:100px;">
 facebook.com/20manas
 </a>
 </p>
@@ -149,6 +149,6 @@ facebook.com/20manas
 <br><br><br>
 </div>
 </div></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
 </body>
 </html>
