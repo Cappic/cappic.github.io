@@ -146,9 +146,13 @@ $.ajax({url: location + ".html#maindiv", success: function(result){
 }
 window.onpopstate = function() {
 	var url = window.location.pathname;
+	if(url=="/"){
+	getajaxfile("index");
+	} else {
 	var filename = url.substring(url.lastIndexOf('/')+1);
 	var exlocation = filename.split(".")[0];
     getajaxfile(exlocation);
+	}
 }
 var root = document.querySelector(":root");
 var vsize = window.outerWidth;
