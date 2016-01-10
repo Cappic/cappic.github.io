@@ -142,7 +142,6 @@ $('#loading').show();
 $.ajax({url: location + ".html#maindiv", success: function(result){
         $("#mainwrapper").html(result);
 		$("#loading").hide();
-		eval($("#maindiv").html());
     }});
 }
 window.onpopstate = function() {
