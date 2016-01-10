@@ -61,11 +61,11 @@ Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
 </head>
 <body>
 <div id="headcontent"></div>
-<div id="mainwrapper"><div id="maindiv">
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;top:10%;">
 <title>About Us - Cappic Photography</title>
 <style>
 body {transition:all 0.5s}
-#maindiv {top:10%; left:0; position:absolute; text-align:center; font-size:2rem; width:100%; color:white; font-family: "Roboto";}
+#page {position:absolute; text-align:center; font-size:2rem; width:100%; color:white; font-family: "Roboto";}
 a {text-decoration:none; color:white;}
 .bigmission {font-size:7rem;}
 .title {font-family:'Lato'; font-size:7rem;}
@@ -103,7 +103,7 @@ function inview(elem)
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 </script>
-
+<div id="page">
 <div style="background-color:rgba(0,0,0,0.5); font-size:3rem">
 <br><br><br>
 <p id="1l" class="bigmission">OUR MISSION</p>
@@ -147,6 +147,7 @@ facebook.com/20manas
 </div>
 </center>
 <br><br><br>
+</div>
 </div></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
