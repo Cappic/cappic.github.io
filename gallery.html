@@ -12,66 +12,8 @@ $("#headcontent").load("body.html");
 <div id="headcontent"></div>
 <div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;top:10%;">
 <title>Cappic Photography - Gallery</title>
-<style>
-body {background-image: url("../images/bg.jpg") !important}
-
-.commonpanel {cursor:pointer;}
-.commonpanel pre {font-size: 8rem; font-size:8vmin; transition: font-size 0.5s; font-family:"Roboto"; text-align: center; display:inline; text-shadow: 1px 1px 10px black;}
-.commonpanel:hover pre {font-size: 10rem; font-size:10vmin; }
-.commonpanel span {opacity:0; font-size:1rem; font-size:1vmin; transition: opacity 1s, font-size 0.5s; }
-.commonpanel:hover span {opacity:1; font-size:10rem; font-size:10vmin; }
-
-#panel-1 { background-color: slateblue; color:slateblue;}
-
-#panel-2 { background-color: orangered; color:orangered;}
-
-#panel-3 { background-color: slateblue; color:slateblue;}
-
-a { color: inherit; text-decoration:none }
-
-.panel { list-style-type: none; display:block; top:5rem; top:5vmin; position:absolute; width:100%;
-}
-</style>
-<script>
-var c1=0,c2=0,c3=0;
-function sclick(row){
-var touchcheck = document.getElementsByClassName('touchevents');
-if (touchcheck.length > 0) {
-	if(row=="akshay"){
-	if(c1==1){nav(row); cl=0; }
-	else cl=1;}
-	
-	else if(row=="sankalp"){
-	if(c2==1){nav(row); c2=0; }
-	else c2=1;}
-	
-	else if(row=="adhyan"){
-	if(c3==1){nav(row); c3=0; }
-	else c3=1;}
-} else nav(row);
-}
-</script>
-
-<div class='panel'><center>
-						<a onClick="sclick(this.id)" id="akshay"><li class="commonpanel" id='panel-1'>
-<pre>
-<span>View
-</span>Akshaydeep Sharma<span>'s
-Photography</span>
-</pre></li></a>
-						<a onClick="sclick(this.id)" id="sankalp"><li class="commonpanel" id='panel-2'>
-<pre>
-<span>View
-</span>Sankalp Sagar<span>'s
-Photography</span>
-</pre></li></a>
-						<a onClick="sclick(this.id)" id="adhyan"><li class="commonpanel" id='panel-3'>
-<pre>
-<span>View
-</span>Adhyan Mall<span>'s
-Photography</span>
-</pre></li></a>
-					</center></div>
+<iframe src="//cappicphotography.pixieset.com/gallery/" align="bottom" height="100%" width="100%" frameborder="0"></iframe>
+<style>body {overflow:hidden;background-color:black;background-image:none;}</style>
 </div></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
 </body>
