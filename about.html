@@ -30,7 +30,7 @@ a {text-decoration:none; color:white;}
 document.body.onscroll = changebg;
 window.onload = changebg;
 function changebg(){
-if(Modernizr.no-touchevents)
+if((Modernizr.touchevents)==false)
 	{
 
 	if(inview("#1l")) {
