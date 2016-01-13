@@ -13,7 +13,7 @@ $("#headcontent").load("body.html");
 <div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;top:10%;">
 <title>About Us - Cappic Photography</title>
 <style>
-body {background-image:url("images/1.jpg"); transition:all 0.5s;}
+body {background-image:url("images/1.jpg"); transition:all 0.5s; background-position:center center}
 body:after{
     display:none;
     content:
@@ -30,6 +30,8 @@ a {text-decoration:none; color:white;}
 document.body.onscroll = changebg;
 window.onload = changebg;
 function changebg(){
+if(Modernizr.no-touchevents)
+	{
 
 	if(inview("#1l")) {
 	$(document.body).css({"background-image":"url('images/1.jpg')"});
@@ -42,6 +44,7 @@ else if((inview("#5l"))&&(inview("#3l")==false)) {
 	}
 else{
 	$(document.body).css({"background-image":"url('images/bg.jpg')"});
+	}
 	}
 }
 
