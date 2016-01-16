@@ -7,13 +7,9 @@ body {margin:0 auto !important; background-size:cover; overflow-x:hidden !import
 }
 #menu a {cursor: pointer; padding-left:2vw; transition: all .25s;
 }
-#menu a:hover {color: dodgerblue; text-shadow: 0 0 5px dodgerblue;
+#menu a:hover, #menu a:active {text-shadow: 1px 1px 10px black;
 }
 #logo {width:200px; position:fixed; left:5px; z-index:101; cursor:pointer; margin-top:.5vw;
-}
-#logo:hover { -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,1)); filter: drop-shadow(0 0 2px rgba(255,255,255,1)); 
-}
-#mlogo:hover, #mlogo:active {-webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,1)); filter: drop-shadow(0 0 2px rgba(255,255,255,1));
 }
 ::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
 }
@@ -25,7 +21,7 @@ body {margin:0 auto !important; background-size:cover; overflow-x:hidden !import
 }
 #mmenu a {text-shadow: 0 0 5px white; color:white;
 }
-#mmenu li:hover, #mmenu li:active {color: dodgerblue; text-shadow: 0 0 5px dodgerblue; cursor: pointer;
+#mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 10px white; cursor: pointer;
 }
 hr {color:white
 }
@@ -34,30 +30,24 @@ hr {color:white
 
 #bg {background-color:black; left:0; top:0; height:100%; width:100%; opacity:0.5; position:fixed; z-index:2; display:none
 }
-#innov {width:100%; height:10%; min-width:1000px; min-height:50px; position:fixed;  z-index: 99; left:0; background-color:black; opacity:0.5;
+#innov {width:100%; height:10%; min-width:1000px; min-height:50px; position:fixed;  z-index: 99; left:0; background-color:lightseagreen; box-shadow:0 1px 20px rgba(0,0,0,0.4);
 }
 .fbanner {position:fixed; height:70px; top:20%; background-color:#3b5998; transition: right 0.25s; z-index:999;
 }
 @media only screen and (max-width: 799px) {
-.no-touchevents #menu, .no-touchevents #logo, .no-touchevents #innov {display: none;
+#menu,#logo,#innov {display: none;
 }
-.no-touchevents #button {display:inherit;
+#button {display:inherit;
 }
-.no-touchevents #maindiv {top:0 !important;
+#maindiv {top:0 !important;
 }
-}
-.touchevents #menu, .touchevents #logo, .touchevents #innov {display: none;
-}
-.touchevents #button {display:inherit;
-}
-.touchevents #maindiv {top:0;
 }
 @media only screen and (orientation: portrait) {
-.touchevents #fbbutton {min-width:5%;
+#fbbutton {min-width:5%;
 }
 }
 @media only screen and (orientation: landscape) {
-.touchevents #fbbutton {min-width:2%;
+#fbbutton {min-width:2%;
 }
 }
 
@@ -97,8 +87,8 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <div onmouseenter="openfb()" onmouseleave="closefb()">
-<button class="fbanner" id="fbbutton" style="width:25px; right:0;" onclick="fbbutton()">
-<img src="../images/arrow.png" style="width:50%; position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);">
+<button class="fbanner" id="fbbutton" style="width:35px; right:0; border:0;" onclick="fbbutton()">
+<img src="images/fb.png" style="height:100%; position: absolute; top: 0; left:0; transform: translate(-50%,0)">
 </button>
 <div class="fbanner" id="fbcontainer" style="width:225px; right:-225px;">
 <div style="top: 50%; right:0; transform: translate(0,-50%); position:absolute;" class="fb-page" data-href="https://www.facebook.com/cappicphotography" data-width="225" data-height="70" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/cappicphotography"><a href="https://www.facebook.com/cappicphotography">Cappic</a></blockquote></div></div>
@@ -130,6 +120,11 @@ function closefb() {
 	$("#fbcontainer").css("right","-225px");
 	fbswitch=0;
 	}
+$(window).on("scroll", function(){
+  if($("body").scrollTop() == 10){
+  $("#menu").css("box-shadow","0 10px 20px rgba(0,0,0,0.2)")
+  }
+}
 
 function nav(location)
 {
