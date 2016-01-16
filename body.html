@@ -1,46 +1,44 @@
 <style>
 body {margin:0 auto !important; background-size:cover; overflow-x:hidden !important; background:no-repeat fixed center top
 }
-#menu {position:fixed; top:0; right:50px; z-index:100;
+#menu {position:absolute; right:50px; z-index:100; top:50%; transform:translate(0,-50%);
 }
-#menu li {display: inline; font-size: 22px; font-family: "Roboto"; text-decoration: none; color: white;
+#menu li {display: inline; font-size: 22px; font-family: "Roboto"; text-decoration: none; color:dodgerblue;
 }
 #menu a {cursor: pointer; padding-left:1em; padding-right:1em; transition: all .25s;
 }
-#menu a:hover, #menu a:active {text-shadow: 1px 1px 10px black;
+#menu a:hover, #menu a:active {text-shadow: 1px 1px 3px dodgerblue;
 }
-#logo {width:200px; position:fixed; left:5px; z-index:101; cursor:pointer; margin-top:.5vw;
+#logo {width:200px; position:absolute; left:5px;cursor:pointer; top:5px;
 }
 ::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
 }
 ::-webkit-scrollbar-thumb {background-color:white; border-radius: 10px;
 }
-#mmenu {background-color:black; opacity:1; left:0; top:0; height:62%; transition:all 1s; width:100%; z-index:1000; position:fixed; transform: translateZ(0); display:none;
+#mmenu {right:100%; top:100%; bottom:0; transition:all 1s; width:100%; z-index:1000; position:absolute; transform: translateZ(0); display:none;
 }
 #mmenu li {display:block; font-size:17.7rem; font-size:10vh;
 }
-#mmenu a {text-shadow: 0 0 5px white; color:white;
+#mmenu a {text-shadow: 0 0 5px white; color:dodgerblue; cursor: pointer;
 }
-#mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 10px white; cursor: pointer;
+#mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 10px dodgerblue;
 }
 hr {color:white
 }
-#button {left:0; max-height:20%; min-height:10%; top:0; z-index:99; position:fixed; height:14rem; height:14vw; display:none;
-}
+#button1 {min-height:50px;height:10%; width:17.8%; left:0; top:0; position:fixed; z-index:1001; display:none;}
+#button1 hr {width:25px; height:2px; background-color:white; border-radius:2px; border-color:white; border:0.001px; margin:5px; transition: all 0.5s;}
+#button2 {position:absolute; left:50%;top:50%; transform: translate(-50%,-50%)}
 
-#bg {background-color:black; left:0; top:0; height:100%; width:100%; opacity:0.5; position:fixed; z-index:2; display:none
-}
-#innov {width:100%; height:10%; min-width:1000px; min-height:50px; position:fixed;  z-index: 99; left:0; background-color:lightseagreen; box-shadow:0 1px 20px rgba(0,0,0,0.4);
+#innov {width:100%; height:10%; min-height:50px; position:fixed;  z-index: 99; left:0; background-color:rgba(0,0,0,0.05); box-shadow:0 1px 20px rgba(0,0,0,0.4);
 }
 .fbanner {position:fixed; height:70px; top:20%; background-color:#3b5998; transition: right 0.25s; z-index:999;
 }
-@media only screen and (max-width: 799px) {
-#menu,#logo,#innov {display: none;
+@media only screen and (max-width: 650px) {
+#menu {display: none;
 }
-#button {display:inherit;
+#logo {left:50%; transform:translate(-50%,0);
 }
-#maindiv {top:0 !important;
-}
+#button1,#mmenu {display:inherit}
 }
 @media only screen and (orientation: portrait) {
 #fbbutton {min-width:5%;
@@ -55,8 +53,8 @@ hr {color:white
 url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');}
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 </style>
-<div id="innov"></div>
-	<a onClick="nav(this.className)" class="/index"><img id="logo" src="../images/mlogo.png"></a>
+<div id="innov">
+	<a onClick="nav(this.className)" class="/index"><img id="logo" src="images/mlogo.png"></a>
 	<div id="menu">
 		<ul>
 			<li><a onClick="nav(this.className)" class="/gallery">Gallery</a></li>
@@ -65,17 +63,22 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 		</ul>  
 	</div>
 	
-<div id="bg" onClick="menuappear(this.id)"></div>
-	<img src="../images/mbutton.png" id="button" onClick="menuappear(this.id)">
 	<div class="mmenu" id="mmenu">
 	
 			<ul>
-				<a><li onClick="nav(this.className); menuappear(this.id)" class="/index"><img src="../images/mlogo.png" style="width:22.5em; width:40vh; max-width:90%;" id="mlogo"></li></a><hr>
 				<a><li onClick="nav(this.className); menuappear(this.id)" class="/gallery">Gallery</li></a><hr>
 				<a><li onClick="nav(this.className); menuappear(this.id)" class="/about">About</li></a><hr>
 				<a><li onClick="nav(this.className); menuappear(this.id)" class="/tutorials">Tutorials</li></a>
 			</ul>
-		</div>
+		</div></div>
+
+<div id="button1" onclick="showmenu()">
+	<div id="button2">
+	<div id="button3" style="transition: all 0.5s">
+	<hr id="hr1"><hr id="hr2"><hr id="hr3">
+	</div>
+	</div>
+	</div>
 <img src="../images/loading.gif" id="loading" style="position: fixed; top: 50%; left: 50%; margin-top: -25px; margin-left: -25px; width:50px; height:50px; display:none;">
 <div id="fb-root"></div>
 <script>
@@ -88,7 +91,7 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 }(document, 'script', 'facebook-jssdk'));</script>
 <div onmouseenter="openfb()" onmouseleave="closefb()">
 <button class="fbanner" id="fbbutton" style="width:35px; right:0; border:0;" onclick="fbbutton()">
-<img src="images/fb.png" style="height:100%; position: absolute; top: 0; left:0; transform: translate(-50%,0)">
+<img src="../images/fb.png" style="height:100%; position: absolute; top: 0; left:0; transform: translate(-50%,0)">
 </button>
 <div class="fbanner" id="fbcontainer" style="width:225px; right:-225px;">
 <div style="top: 50%; right:0; transform: translate(0,-50%); position:absolute;" class="fb-page" data-href="https://www.facebook.com/cappicphotography" data-width="225" data-height="70" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/cappicphotography"><a href="https://www.facebook.com/cappicphotography">Cappic</a></blockquote></div></div>
@@ -103,7 +106,22 @@ function menuappear(objectid) {
 	else {
 		$('#mmenu').hide();
 		$('#bg').hide();
-		}
+		}}
+		
+var menuswitch=0;
+function showmenu(){
+if(menuswitch==0){
+$("#hr1,#hr2,#hr3").css({"background-color":"dodgerblue","border-color":"dodgerblue"});
+$("#button3").css({"transform":"rotate(-270deg)"});
+$('#mmenu').css("right","0");
+menuswitch=1;
+}
+else {
+$("#hr1,#hr2,#hr3").css({"background-color":"white","border-color":"white"});
+$("#button3").css({"transform":"rotateZ(0)"});
+$('#mmenu').css("right","100%");
+menuswitch=0;
+}
 }
 var fbswitch=0;
 function fbbutton(){
@@ -111,12 +129,12 @@ function fbbutton(){
 	}
 
 function openfb(){
-	$("#fbbutton").css({"right":"225px","transform":"rotate(180deg)"});
+	$("#fbbutton").css("right","225px");
 	$("#fbcontainer").css("right","0px");
 	fbswitch=1;
 	}
 function closefb() {
-	$("#fbbutton").css({"right":"0px","transform":"rotate(0deg)"});
+	$("#fbbutton").css("right","0px");
 	$("#fbcontainer").css("right","-225px");
 	fbswitch=0;
 	}
