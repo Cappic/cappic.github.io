@@ -117,7 +117,7 @@ $('#mmenu,#bg').css("right","100%");
 menuswitch=0;
 }
 $(#maindiv).onload=menuchange;
-$(#maindiv).body.onscroll = menuchange;
+$(#maindiv).onscroll = menuchange;
 function menuchange() {
 var url = window.location.pathname;
 var filename = url.substring(url.lastIndexOf('/')+1);
@@ -188,4 +188,3 @@ var fsize = vsize/100;
 root.style.fontSize = fsize;
 </script>
 <link rel="shortcut icon" href="/favicon.ico" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
