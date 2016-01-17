@@ -1,35 +1,35 @@
 <style>
 body {margin:0 auto !important; background-size:cover; overflow-x:hidden !important; background:no-repeat fixed center top
 }
-#menu {position:absolute; right:50px; z-index:100; top:50%; transform:translate(0,-50%);
+#menu {position:relative; float:right; right:50px; z-index:100; top:50%; transform:translate(0,-50%);
 }
-#menu li {display: inline; font-size: 22px; font-family: "Roboto"; text-decoration: none; color:dodgerblue;
+#menu li {display: inline; font-size: 22px; font-family: "Roboto"; text-decoration: none; color:white;
 }
 #menu a {cursor: pointer; padding-left:1em; padding-right:1em; transition: all .25s;
 }
-#menu a:hover, #menu a:active {text-shadow: 1px 1px 3px dodgerblue;
+#menu a:hover, #menu a:active, #mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 1px white;
 }
-#logo {width:200px; position:absolute; left:5px;cursor:pointer; top:5px;
+#logo {height:42px; position:relative; left:5px;cursor:pointer; top:9px; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
 }
 ::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
 }
 ::-webkit-scrollbar-thumb {background-color:white; border-radius: 10px;
 }
-#mmenu {right:100%; top:100%; bottom:0; transition:all 1s; width:100%; z-index:1000; position:absolute; transform: translateZ(0); display:none;
+#mmenu {right:100%; top:20; bottom:0; transition:all 0.5s; width:100%; z-index:1000; position:relative; transform: translateZ(0); display:none; background-color:transparent;
 }
 #mmenu li {display:block; font-size:17.7rem; font-size:10vh;
 }
-#mmenu a {text-shadow: 0 0 5px white; color:dodgerblue; cursor: pointer;
-}
-#mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 10px dodgerblue;
+#mmenu a {color:white; cursor: pointer;
 }
 hr {color:white
 }
-#button1 {min-height:50px;height:10%; width:17.8%; left:0; top:0; position:fixed; z-index:1001; display:none;}
-#button1 hr {width:25px; height:2px; background-color:white; border-radius:2px; border-color:white; border:0.001px; margin:5px; transition: all 0.5s;}
+#button1 {min-height:60px;height:10%; width:10%; left:0; top:0; position:fixed; z-index:1001; display:none;background-color:rgba(0,0,0,0.5);}
+#button1 hr {width:20px; height:2px; background-color:white; border-radius:2px; border-color:white; border:0.001px; margin:5px; transition: all 0.5s;}
 #button2 {position:absolute; left:50%;top:50%; transform: translate(-50%,-50%)}
 
-#innov {width:100%; height:10%; min-height:50px; position:fixed;  z-index: 99; left:0; background-color:rgba(0,0,0,0.05); box-shadow:0 1px 20px rgba(0,0,0,0.4);
+#innov {width:100%; height:10%; min-height:60px; z-index: 99; left:0; background-color:rgba(0,0,0,0.5); z-index:1000;
+}
+#bg	{background-color:black ;top:0;height:100%;width:100%;position:fixed;z-index:500;right:100%; transition:right 0.5s; display:none;
 }
 .fbanner {position:fixed; height:70px; top:20%; background-color:#3b5998; transition: right 0.25s; z-index:999;
 }
@@ -38,7 +38,7 @@ hr {color:white
 }
 #logo {left:50%; transform:translate(-50%,0);
 }
-#button1,#mmenu {display:inherit}
+#button1,#mmenu,#bg {display:inherit}
 }
 @media only screen and (orientation: portrait) {
 #fbbutton {min-width:5%;
@@ -66,11 +66,14 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 	<div class="mmenu" id="mmenu">
 	
 			<ul>
-				<a><li onClick="nav(this.className); menuappear(this.id)" class="/gallery">Gallery</li></a><hr>
-				<a><li onClick="nav(this.className); menuappear(this.id)" class="/about">About</li></a><hr>
-				<a><li onClick="nav(this.className); menuappear(this.id)" class="/tutorials">Tutorials</li></a>
+				<a><li onClick="nav(this.className);showmenu();" class="/gallery">Gallery</li></a><hr>
+				<a><li onClick="nav(this.className);showmenu();" class="/about">About</li></a><hr>
+				<a><li onClick="nav(this.className);showmenu();" class="/tutorials">Tutorials</li></a>
 			</ul>
 		</div></div>
+		
+<div id="enable" style="width:100%; height:10%; min-height:50px; z-index: -99; left:0; top:0; "></div>
+<div id="bg"></div>
 
 <div id="button1" onclick="showmenu()">
 	<div id="button2">
@@ -79,6 +82,7 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 	</div>
 	</div>
 	</div>
+<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>hjkhkjhkjhkjhhjhkhjkhjhkjhj<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 <img src="../images/loading.gif" id="loading" style="position: fixed; top: 50%; left: 50%; margin-top: -25px; margin-left: -25px; width:50px; height:50px; display:none;">
 <div id="fb-root"></div>
 <script>
@@ -98,30 +102,43 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 </div>
 </div>
 <script>
-function menuappear(objectid) {
-	if (objectid == "button") {
-		$('#mmenu').show();
-		$('#bg').show();
-		} 
-	else {
-		$('#mmenu').hide();
-		$('#bg').hide();
-		}}
-		
 var menuswitch=0;
 function showmenu(){
 if(menuswitch==0){
 $("#hr1,#hr2,#hr3").css({"background-color":"dodgerblue","border-color":"dodgerblue"});
 $("#button3").css({"transform":"rotate(-270deg)"});
-$('#mmenu').css("right","0");
+$('#mmenu,#bg').css("right","0");
+
 menuswitch=1;
 }
 else {
 $("#hr1,#hr2,#hr3").css({"background-color":"white","border-color":"white"});
 $("#button3").css({"transform":"rotateZ(0)"});
-$('#mmenu').css("right","100%");
+$('#mmenu,#bg').css("right","100%");
 menuswitch=0;
 }
+}
+window.onload=menuchange;
+document.body.onscroll = menuchange;
+function menuchange() {
+    var $elem = $("#enable");
+    var $window = $(window);
+
+    var docViewTop = $window.scrollTop();
+    var elemBottom = $elem.offset().top; + $elem.height();
+
+    if(elemBottom < docViewTop){
+	$("#logo").attr("src","images/favi.png");
+	$("#innov").css({"position":"fixed","box-shadow":"0 1px 20px rgba(0,0,0,0.4)","background-color":"dodgerblue"});
+	$("#button1").css({"background-color":"rgba(255,255,255,0.5)"});
+	$("#bg").css({"background-color":"dodgerblue"});
+	}
+	else {
+	$("#logo").attr("src","images/mlogo.png");
+	$("#innov").css({"position":"static","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
+	$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
+	$("#bg").css({"background-color":"black"});
+	}
 }
 var fbswitch=0;
 function fbbutton(){
@@ -195,3 +212,4 @@ Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);
 //_____________________________________________________modernizr end_______________________________________________________
 </script>
 <link rel="shortcut icon" href="/favicon.ico" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
