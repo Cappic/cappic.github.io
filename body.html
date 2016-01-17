@@ -116,8 +116,8 @@ $("#button3").css({"transform":"rotateZ(0)"});
 $('#mmenu,#bg').css("right","100%");
 menuswitch=0;
 }
-window.onload=menuchange;
-document.body.onscroll = menuchange;
+$(#maindiv).onload=menuchange;
+$(#maindiv).body.onscroll = menuchange;
 function menuchange() {
 var url = window.location.pathname;
 var filename = url.substring(url.lastIndexOf('/')+1);
