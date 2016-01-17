@@ -1,7 +1,7 @@
 <style>
 body {margin:0 auto !important; background-size:cover; overflow-x:hidden !important; background:no-repeat fixed center top
 }
-#menu {position:relative; float:right; right:50px; z-index:100; top:50%; transform:translate(0,-50%);
+#menu {position:relative; z-index:100; float:left; top:50%; transform:translate(0,-50%)
 }
 #menu li {display: inline; font-size: 22px; font-family: "Lato"; text-decoration: none; color:white;
 }
@@ -9,7 +9,7 @@ body {margin:0 auto !important; background-size:cover; overflow-x:hidden !import
 }
 #menu a:hover, #menu a:active, #mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 1px white;
 }
-#logo {height:42px; position:relative; left:5px;cursor:pointer; top:9px; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
+#logo {height:42px; position:relative;float:left; left:5px;cursor:pointer; top:9px; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
 }
 ::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
 }
@@ -25,19 +25,25 @@ hr {color:white
 #button1 hr {width:20px; height:2px; background-color:white; border-radius:2px; border-color:white; border:0.001px; margin:5px; transition: all 0.5s;}
 #button2 {position:absolute; left:50%;top:50%; transform: translate(-50%,-50%)}
 
-#innov {width:100%; height:12%; min-height:60px; z-index: 99; left:0; background-color:rgba(0,0,0,0.5); z-index:1000;
+#banner {width:100%; height:12%; min-height:60px; z-index: 99; left:0; background-color:rgba(0,0,0,0.5); z-index:1000;
 }
 #bg	{background-color:black ;top:0;height:100%;width:100%;position:fixed;z-index:501;right:100%; transition:right 0.5s; display:none;
 }
 .fbanner {position:fixed; height:70px; top:20%; background-color:#3b5998; transition: right 0.25s; z-index:500;
 }
 @media only screen and (max-width: 650px) {
-#menu {display: none;
+#menu,#innov {display: none;
 }
 #logo {left:50%; transform:translate(-50%,0);
 }
 #button1,#mmenu,#bg {display:inherit}
 }
+
+@media only screen and (max-width: 1200px) {
+#innov {left:600px;
+}
+}
+
 @media only screen and (orientation: portrait) {
 #fbbutton {min-width:5%;
 }
@@ -51,7 +57,9 @@ hr {color:white
 url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');}
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 </style>
-<div id="innov">
+<img src="images/innov.png" id="innov" style="width:50%; min-width:600px; top:3%; right:0; position:fixed;">
+	
+<div id="banner">
 	<a onClick="nav(this.className);hidemenu();" class="/index"><img id="logo" src="images/mlogo.png"></a>
 	<div id="menu">
 		<ul>
