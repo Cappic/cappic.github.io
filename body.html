@@ -52,7 +52,7 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 </style>
 <div id="innov">
-	<a onClick="nav(this.className)" class="/index"><img id="logo" src="../images/mlogo.png"></a>
+	<a onClick="nav(this.className);hidemenu();" class="/index"><img id="logo" src="../images/mlogo.png"></a>
 	<div id="menu">
 		<ul>
 			<li><a onClick="nav(this.className)" class="/gallery">Gallery</a></li>
@@ -64,16 +64,16 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 	<div class="mmenu" id="mmenu">
 	
 			<ul>
-				<a><li onClick="nav(this.className);showmenu();" class="/gallery">Gallery</li></a><hr>
-				<a><li onClick="nav(this.className);showmenu();" class="/about">About</li></a><hr>
-				<a><li onClick="nav(this.className);showmenu();" class="/tutorials">Tutorials</li></a>
+				<a><li onClick="nav(this.className);hidemenu();" class="/gallery">Gallery</li></a><hr>
+				<a><li onClick="nav(this.className);hidemenu();" class="/about">About</li></a><hr>
+				<a><li onClick="nav(this.className);hidemenu();" class="/tutorials">Tutorials</li></a>
 			</ul>
 		</div></div>
 		
 <div id="enable" style="width:100%; height:10%; min-height:50px; z-index: -99; left:0; top:0; "></div>
 <div id="bg"></div>
 
-<div id="button1" onclick="showmenu()">
+<div id="button1" onclick="menubuttonfunc()">
 	<div id="button2">
 	<div id="button3" style="transition: all 0.5s">
 	<hr id="hr1"><hr id="hr2"><hr id="hr3">
@@ -100,20 +100,21 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 </div>
 <script>
 var menuswitch=0;
-function showmenu(){
-if(menuswitch==0){
+function menubuttonfunc(){
+if(menuswitch==0){showmenu();}
+else {hidemenu();}
+}
+function showmenu() {
 $("#hr1,#hr2,#hr3").css({"background-color":"dodgerblue","border-color":"dodgerblue"});
 $("#button3").css({"transform":"rotate(-270deg)"});
 $('#mmenu,#bg').css("right","0");
-
 menuswitch=1;
 }
-else {
+function hidemenu() {
 $("#hr1,#hr2,#hr3").css({"background-color":"white","border-color":"white"});
 $("#button3").css({"transform":"rotateZ(0)"});
 $('#mmenu,#bg').css("right","100%");
 menuswitch=0;
-}
 }
 window.onload=menuchange;
 document.body.onscroll = menuchange;
@@ -182,3 +183,4 @@ var fsize = vsize/100;
 root.style.fontSize = fsize;
 </script>
 <link rel="shortcut icon" href="/favicon.ico" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
