@@ -119,6 +119,9 @@ menuswitch=0;
 window.onload=menuchange;
 document.body.onscroll = menuchange;
 function menuchange() {
+var url = window.location.pathname;
+var filename = url.substring(url.lastIndexOf('/')+1);
+if(filename!="about.html"){
     var $elem = $("#enable");
     var $window = $(window);
 
@@ -136,6 +139,7 @@ function menuchange() {
 	$("#innov").css({"position":"static","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
 	$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
 	$("#bg").css({"background-color":"black"});
+	}
 	}
 }
 var fbswitch=0;
@@ -163,8 +167,8 @@ function getajaxfile(location)
 {
 $('#loading').show();
 $.ajax({url: location + ".html#maindiv", success: function(result){
-        $("#mainwrapper").html(result);
-		$("#loading").hide();
+	$("#mainwrapper").html(result);
+	$("#loading").hide();
     }});
 }
 window.onpopstate = function() {
@@ -183,4 +187,3 @@ var fsize = vsize/100;
 root.style.fontSize = fsize;
 </script>
 <link rel="shortcut icon" href="/favicon.ico" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
