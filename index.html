@@ -24,18 +24,13 @@ animation: anione 20s infinite; -webkit-animation: anione 20s infinite; -moz-ani
 transition: height 0.5s, width 0.1s;
 }
 
-#mobcontent {position:absolute; height:450px;}
+#mobcontent {position:absolute; height:500px;}
 .comcontent {height:100%; margin-top:50px;}
 
 #mobcontent {display:none}
 
 .touchevents #pccontent {display:none}
 .touchevents #mobcontent {display:inherit}
-
-@media only screen and (max-width: 799px) {
-#pccontent {display:none}
-#mobcontent {display:inherit}
-}
 
 #pccontent:hover {
 animation:paused; -webkit-animation:paused; -moz-animation:paused; width:100%; height:100%; left:0; 
@@ -64,18 +59,9 @@ td a {height:100%; display:block;}
 @moz-keyframes anione {
 32% {left:-100%;} 33% {left:-200%;} 66% {left: -200%} 67% {left:0} 99% {left:0} 100% {left:-100%}
 }
-@media only screen and (orientation: portrait) {
+
 .title {
-font-size: 14rem;
-}
-}
-@media only screen and (orientation: landscape) {
-.title {
-font-size: 5rem;
-}
-}
-.title {
-font-family:'Lato';
+font-family:'Lato'; font-size:5rem;
 }
 .bold {
 font-weight:900;
@@ -85,6 +71,12 @@ font-weight:100;
 }
 .description {
 font-family:'Roboto'; font-size: 30px;
+}
+
+@media only screen and (max-width: 799px) {
+#pccontent {display:none}
+#mobcontent {display:inherit}
+.title {font-size: 14rem;}
 }
 a {
 text-decoration:none; color:inherit;
@@ -131,6 +123,8 @@ with each picture having a number of distinct characteristics and innovation.</s
 </a></div>
 </div>
 <script>
+window.onresize = function(){ location.reload(); }
+
 //__________________________________________________________________________modernizr________________________________
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
  * http://modernizr.com/download/#-touchevents !*/

@@ -112,7 +112,7 @@ else {hidemenu();}
 }
 function showmenu() {
 $("#hr1,#hr2,#hr3").css({"background-color":"dodgerblue","border-color":"dodgerblue"});
-$("#button3").css({"transform":"rotate(-270deg)"});
+$("#button3").css({"transform":"rotate(-90deg)"});
 $('#mmenu,#bg').css("right","0");
 menuswitch=1;
 }
@@ -122,14 +122,14 @@ $("#button3").css({"transform":"rotateZ(0)"});
 $('#mmenu,#bg').css("right","100%");
 menuswitch=0;
 }
-$(window).on("load",menuchange);
-$(window).on("scroll",menuchange);
-function menuchange() {
+$(window).on("load",menuchange(window));
+$(window).on("scroll",menuchange(window));
+function menuchange(varwin) {
 var url = window.location.pathname;
 var filename = url.substring(url.lastIndexOf('/')+1);
 if(filename!="about.html"){
     var $elem = $("#enable");
-    var $window = $(window);
+    var $window = $(varwin);
 
     var docViewTop = $window.scrollTop();
     var elemBottom = $elem.offset().top; + $elem.height();
