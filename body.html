@@ -133,7 +133,8 @@ if(filename!="about.html"){
     var $window = $(window);
 
     var docViewTop = $window.scrollTop();
-    var elemBottom = $elem.offset().top; + $elem.height();
+	var offset = $elem.offset();
+    var elemBottom = offset.top; + $elem.height();
 
     if(elemBottom < docViewTop){
 	$("#mlogo").hide();
