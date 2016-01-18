@@ -1,7 +1,7 @@
 <style>
 body {margin:0 auto !important; background-size:cover; overflow-x:hidden !important; background:no-repeat fixed center top
 }
-#menu {position:relative; z-index:100; float:left; top:50%; transform:translate(0,-50%)
+#menu {position:relative; float:left; left:200px; z-index:100; top:50%; transform:translate(0,-50%);
 }
 #menu li {display: inline; font-size: 22px; font-family: "Lato"; text-decoration: none; color:white;
 }
@@ -9,13 +9,13 @@ body {margin:0 auto !important; background-size:cover; overflow-x:hidden !import
 }
 #menu a:hover, #menu a:active, #mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 1px white;
 }
-#logo {height:42px; position:relative;float:left; left:5px;cursor:pointer; top:9px; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
+#logo {height:42px; position:absolute; left:5px;cursor:pointer; top:9px; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
 }
 ::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
 }
 ::-webkit-scrollbar-thumb {background-color:white; border-radius: 10px;
 }
-#mmenu {right:100%; top:20; bottom:0; transition:all 0.5s; width:100%; z-index:1000; position:relative; transform: translateZ(0); display:none; background-color:transparent;
+#mmenu {right:100%; top:100%; bottom:0; transition:all 0.5s; width:100%; z-index:1000; position:relative; transform: translateZ(0); display:none; background-color:transparent;
 }
 #mmenu li {display:block; font-size:17.7rem; font-size:10vh; color:white; cursor: pointer;  font-family: "Lato";
 }
@@ -39,9 +39,8 @@ hr {color:white
 #button1,#mmenu,#bg {display:inherit}
 }
 
-@media only screen and (max-width: 1200px) {
-#innov {display:none
-}
+@media only screen and (max-width: 1000px) {
+#innov {display:none}
 }
 
 @media only screen and (orientation: portrait) {
@@ -57,9 +56,8 @@ hr {color:white
 url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');}
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 </style>
-<img src="images/innov.png" id="innov" style="width:50%; min-width:600px; top:3%; right:0; position:fixed;">
-	
 <div id="banner">
+	<img src="images/innov.png" id="innov" style="position:relative; top:35%; width:40%; float:right; opacity:0.5">
 	<a onClick="nav(this.className);hidemenu();" class="/index"><img id="logo" src="images/mlogo.png"></a>
 	<div id="menu">
 		<ul>
@@ -141,12 +139,14 @@ if(filename!="about.html"){
 	$("#banner").css({"position":"fixed","box-shadow":"0 1px 20px rgba(0,0,0,0.4)","background-color":"dodgerblue"});
 	$("#button1").css({"background-color":"rgba(255,255,255,0.5)"});
 	$("#bg").css({"background-color":"dodgerblue"});
+	$("#menu").css({"left":"50px"});
 	}
 	else {
 	$("#logo").attr("src","images/mlogo.png");
 	$("#banner").css({"position":"static","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
 	$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
 	$("#bg").css({"background-color":"black"});
+	$("#menu").css({"left":"200px"});
 	}
 	} else {$("#banner").css({"position":"fixed"});
 			}
