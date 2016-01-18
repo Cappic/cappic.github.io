@@ -29,9 +29,6 @@ transition: height 0.5s, width 0.1s;
 
 #mobcontent {display:none}
 
-.touchevents #pccontent {display:none}
-.touchevents #mobcontent {display:inherit}
-
 #pccontent:hover {
 animation:paused; -webkit-animation:paused; -moz-animation:paused; width:100%; height:100%; left:0; 
 }
@@ -78,6 +75,12 @@ font-family:'Roboto'; font-size: 30px;
 #mobcontent {display:inherit}
 .title {font-size: 14rem;}
 }
+
+.touchevents #pccontent {display:none}
+.touchevents #mobcontent {display:inherit}
+.touchevents .title {font-size: 14rem;}
+
+
 a {
 text-decoration:none; color:inherit;
 }
@@ -123,8 +126,6 @@ with each picture having a number of distinct characteristics and innovation.</s
 </a></div>
 </div>
 <script>
-window.onresize = function(){ location.reload(); }
-
 //__________________________________________________________________________modernizr________________________________
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
  * http://modernizr.com/download/#-touchevents !*/

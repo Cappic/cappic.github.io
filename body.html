@@ -1,7 +1,7 @@
 <style>
 body {margin:0 auto !important; background-size:cover; overflow-x:hidden !important; background:no-repeat fixed center top
 }
-#menu {position:relative; float:left; left:200px; z-index:100; top:50%; transform:translate(0,-50%);
+#menu {position:relative; float:left; left:200px; z-index:100; top:16px;
 }
 #menu li {display: inline; font-size: 22px; font-family: "Lato"; text-decoration: none; color:white;
 }
@@ -9,7 +9,7 @@ body {margin:0 auto !important; background-size:cover; overflow-x:hidden !import
 }
 #menu a:hover, #menu a:active, #mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 1px white;
 }
-#logo {height:42px; position:absolute; left:5px;cursor:pointer; top:9px; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
+.logo {height:42px; position:absolute; left:5px;cursor:pointer; top:12px; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
 }
 ::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
 }
@@ -34,7 +34,7 @@ hr {color:white
 @media only screen and (max-width: 650px) {
 #menu {display: none;
 }
-#logo {left:50%; transform:translate(-50%,0);
+.logo {left:50%; transform:translate(-50%,0);
 }
 #button1,#mmenu,#bg {display:inherit}
 }
@@ -57,8 +57,9 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 </style>
 <div id="banner">
-	<img src="images/innov.png" id="innov" style="position:relative; top:35%; width:40%; float:right; opacity:0.5">
-	<a onClick="nav(this.className);hidemenu();" class="/index"><img id="logo" src="images/mlogo.png"></a>
+	<img src="images/innov.png" id="innov" style="position:relative; top:46%; width:40%; float:right; opacity:0.5">
+	<a onClick="nav(this.className);hidemenu();" class="/index"><img class="logo" id="mlogo" src="images/mlogo.png"></a>
+	<a onClick="nav(this.className);hidemenu();" class="/index"><img class="logo" id="favi" src="images/favi.png" style="display:none"></a>
 	<div id="menu">
 		<ul>
 			<li><a onClick="nav(this.className)" class="/gallery">Gallery</a></li>
@@ -135,14 +136,16 @@ if(filename!="about.html"){
     var elemBottom = $elem.offset().top; + $elem.height();
 
     if(elemBottom < docViewTop){
-	$("#logo").attr("src","images/favi.png");
+	$("#mlogo").hide();
+	$("#favi").show();
 	$("#banner").css({"position":"fixed","box-shadow":"0 1px 20px rgba(0,0,0,0.4)","background-color":"dodgerblue"});
 	$("#button1").css({"background-color":"rgba(255,255,255,0.5)"});
 	$("#bg").css({"background-color":"dodgerblue"});
-	$("#menu").css({"left":"50px"});
+	$("#menu").css({"left":"40px"});
 	}
 	else {
-	$("#logo").attr("src","images/mlogo.png");
+	$("#mlogo").show();
+	$("#favi").hide();
 	$("#banner").css({"position":"static","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
 	$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
 	$("#bg").css({"background-color":"black"});
