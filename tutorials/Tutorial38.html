@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script>
+function loadbody()
+{
+$("#headcontent").load("../body.html");
+var subtitle = $("#tutintcontent h1").html();
+document.title = subtitle + " - Tutorials - Cappic Photography";
+}
+</script>
+</head>
+<body>
+<div id="headcontent"></div>
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:800px; min-width:75%; left:50%; transform:translate(-50%,0); bottom:0;top:12%;">
+<style>
+body {text-align:center; font-size:28px;}
+
+h1 {font-family:'Lato'; font-size:5rem;}
+
+@media only screen and (orientation: portrait) {
+h1 {font-size:12rem}
+}
+</style>
+
+<div id="tutintcontent">
+<h1>LOCAL CONTRAST ENHANCEMENT</h1>
+<p>Local contrast enhancement attempts to increase the appearance of large-scale light-dark transitions, similar to how <a href="unsharp-mask.htm">sharpening with an "unsharp mask"</a> increases the appearance of small-scale edges. Good local contrast gives an image its "pop" and creates a three-dimensional effect — mimicking the look naturally created by high-end camera lenses. Local contrast enhancement is also useful for minimizing the effect of haze, lens flare, or the dull look created by taking a photograph through a dirty window.</p>
+</div>
+<a href="http://www.cambridgeincolour.com/tutorials/local-contrast-enhancement.htm"><span id="tutextcontent">Continue reading</span></a>
+	</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script>
+function loadbody()
+{
+$("#headcontent").load("../body.html");
+var subtitle = $("#tutintcontent h1").html();
+document.title = subtitle + " - Tutorials - Cappic Photography";
+}
+</script>
+</head>
+<body>
+<div id="headcontent"></div>
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:800px; min-width:75%; left:50%; transform:translate(-50%,0); bottom:0;top:12%;">
+<style>
+body {text-align:center; font-size:28px;}
+
+h1 {font-family:'Lato'; font-size:5rem;}
+
+@media only screen and (orientation: portrait) {
+h1 {font-size:12rem}
+}
+</style>
+
+<div id="tutintcontent">
+<h1>LENS QUALITY: MTF, RESOLUTION & CONTRAST</h1>
+<p>Lens quality is more important now than ever, due to the ever-increasing number of megapixels found in today's digital cameras. Frequently, the resolution of your digital photos is actually limited by the camera's lens — and not by the resolution of the camera itself. However, deciphering MTF charts and comparing the resolution of different lenses can be a science unto itself. This tutorial gives an overview of the fundamental concepts and terms used for assessing lens quality. At the very least, hopefully it will cause you to think twice about what's important when purchasing your next digital camera or lens.</p>
+</div>
+<a href="http://www.cambridgeincolour.com/tutorials/lens-quality-mtf-resolution.htm"><span id="tutextcontent">Continue reading</span></a>
+	</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
+</body>
+</html>

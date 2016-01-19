@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script>
+function loadbody()
+{
+$("#headcontent").load("../body.html");
+var subtitle = $("#tutintcontent h1").html();
+document.title = subtitle + " - Tutorials - Cappic Photography";
+}
+</script>
+</head>
+<body>
+<div id="headcontent"></div>
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:800px; min-width:75%; left:50%; transform:translate(-50%,0); bottom:0;top:12%;">
+<style>
+body {text-align:center; font-size:28px;}
+
+h1 {font-family:'Lato'; font-size:5rem;}
+
+@media only screen and (orientation: portrait) {
+h1 {font-size:12rem}
+}
+</style>
+
+<div id="tutintcontent">
+<h1>SHARPENING: UNSHARP MASK</h1>
+<p>An "unsharp mask" is actually used to sharpen an image, contrary to what its name might lead you to believe. Sharpening can help you emphasize texture and detail, and is critical when post-processing most digital images. Unsharp masks are probably the most common type of sharpening, and can be performed with nearly any image editing software (such as Photoshop). An unsharp mask cannot create additional detail, but it can greatly enhance the appearance of detail by increasing small-scale <a href="sharpness.htm">acutance</a>.</p>
+</div>
+<a href="http://www.cambridgeincolour.com/tutorials/unsharp-mask.htm"><span id="tutextcontent">Continue reading</span></a>
+	</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
+</body>
+</html>

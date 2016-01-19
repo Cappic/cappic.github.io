@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script>
+function loadbody()
+{
+$("#headcontent").load("../body.html");
+var subtitle = $("#tutintcontent h1").html();
+document.title = subtitle + " - Tutorials - Cappic Photography";
+}
+</script>
+</head>
+<body>
+<div id="headcontent"></div>
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:800px; min-width:75%; left:50%; transform:translate(-50%,0); bottom:0;top:12%;">
+<style>
+body {text-align:center; font-size:28px;}
+
+h1 {font-family:'Lato'; font-size:5rem;}
+
+@media only screen and (orientation: portrait) {
+h1 {font-size:12rem}
+}
+</style>
+
+<div id="tutintcontent">
+<h1>HIGH DYNAMIC RANGE PHOTOGRAPHY</h1>
+<p>High dynamic range (HDR) images enable photographers to record a greater range of tonal detail than a camera could capture in a single photo. This opens up a whole new set of lighting possibilities which one might have previously avoided — for purely technical reasons. The new "merge to HDR" feature of Photoshop accomplishes this by combining a series of bracketed exposures into a single image, which encompasses the tonal detail of the entire series.</p>
+</div>
+<a href="http://www.cambridgeincolour.com/tutorials/high-dynamic-range.htm"><span id="tutextcontent">Continue reading</span></a>
+	</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script>
+function loadbody()
+{
+$("#headcontent").load("../body.html");
+var subtitle = $("#tutintcontent h1").html();
+document.title = subtitle + " - Tutorials - Cappic Photography";
+}
+</script>
+</head>
+<body>
+<div id="headcontent"></div>
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; width:800px; min-width:75%; left:50%; transform:translate(-50%,0); bottom:0;top:12%;">
+<style>
+body {text-align:center; font-size:28px;}
+
+h1 {font-family:'Lato'; font-size:5rem;}
+
+@media only screen and (orientation: portrait) {
+h1 {font-size:12rem}
+}
+</style>
+
+<div id="tutintcontent">
+<h1>MACRO CAMERA LENSES</h1>
+<p>A macro lens literally opens up a whole new world of photographic subject matter. It can even cause one to think differently about everyday objects. However, despite these exciting possibilities, macro photography is also often a highly meticulous and technical endeavor. Since fine detail is often a key component, macro photos demand excellent image sharpness, which in turn requires careful photographic technique. Concepts such as magnification, sensor size, depth of field and diffraction all take on new importance. This advanced tutorial provides a technical overview of how these concepts interrelate.</p>
+</div>
+<a href="http://www.cambridgeincolour.com/tutorials/macro-lenses.htm"><span id="tutextcontent">Continue reading</span></a>
+	</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
+</body>
+</html>
