@@ -1,7 +1,7 @@
 <style>
 body {margin:0 auto !important; background-size:cover; overflow-x:hidden !important; background:no-repeat fixed center top
 }
-#menu {position:relative; float:left; left:200px; z-index:100; top:16px;
+#menu {position:relative; float:right; right:50px; z-index:100; top:16px;
 }
 #menu li {display: inline; font-size: 22px; font-family: "Lato"; text-decoration: none; color:white; font-weight: 900;
 }
@@ -31,16 +31,12 @@ hr {color:white
 }
 .fbanner {position:fixed; height:70px; top:20%; background-color:#3b5998; transition: right 0.25s; z-index:500;
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
 #menu {display: none;
 }
 .logo {left:50%; transform:translate(-50%,0);
 }
 #button1,#mmenu,#bg {display:inherit}
-}
-
-@media only screen and (max-width: 1000px) {
-#innov {display:none}
 }
 
 @media only screen and (orientation: portrait) {
@@ -57,7 +53,6 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 </style>
 <div id="banner">
-	<img src="/images/innov.png" id="innov" style="position:relative; top:46%; width:40%; float:right; opacity:0.5">
 	<a onClick="nav(this.className);hidemenu();" class="/index"><img class="logo" id="mlogo" src="/images/mlogo.png"></a>
 	<a onClick="nav(this.className);hidemenu();" class="/index"><img class="logo" id="favi" src="/images/favi.png" style="display:none"></a>
 	<div id="menu">
@@ -142,7 +137,6 @@ if(filename!="about.html"){
 	$("#banner").css({"position":"fixed","box-shadow":"0 1px 20px rgba(0,0,0,0.4)","background-color":"dodgerblue"});
 	$("#button1").css({"background-color":"rgba(255,255,255,0.5)"});
 	$("#bg").css({"background-color":"dodgerblue"});
-	$("#menu").css({"left":"40px"});
 	}
 	else {
 	$("#mlogo").show();
@@ -150,14 +144,12 @@ if(filename!="about.html"){
 	$("#banner").css({"position":"static","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
 	$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
 	$("#bg").css({"background-color":"black"});
-	$("#menu").css({"left":"200px"});
 	}
 	} else {$("#banner").css({"position":"fixed","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
 			$("#mlogo").show();
 			$("#favi").hide();
 			$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
 			$("#bg").css({"background-color":"black"});
-			$("#menu").css({"left":"200px"});
 			}
 }
 var fbswitch=0;
