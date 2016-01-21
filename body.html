@@ -15,26 +15,24 @@ body {margin:0 auto !important; background-size:cover; overflow-x:hidden !import
 }
 ::-webkit-scrollbar-thumb {background-color:white; border-radius: 10px;
 }
-#mmenu {right:100%; top:100%; bottom:0; transition:all 0.5s; width:100%; z-index:1000; position:relative; transform: translateZ(0); display:none; background-color:transparent;
+#mmenu {left:100%; top:100%; bottom:0; transition:all 0.5s; width:100%; z-index:1000; position:relative; transform: translateZ(0); display:none; background-color:transparent;
 }
 #mmenu li {display:block; font-size:14rem; color:white; cursor: pointer;  font-family: "Lato";
 }
 hr {color:white
 }
-#button1 {min-height:60px;height:12%; width:12%; left:0; top:0; position:fixed; z-index:1001; display:none;background-color:rgba(0,0,0,0.5);}
-#button1 hr {width:20px; height:2px; background-color:white; border-radius:2px; border-color:white; border:0.001px; margin:5px; transition: all 0.5s;}
-#button2 {position:absolute; left:50%;top:50%; transform: translate(-50%,-50%)}
+#button1 {min-height:60px;height:12%; min-width:2%; width:80px; right:0; top:0; position:fixed; z-index:1001; display:none;background-color:rgba(0,0,0,0.5);  transition: all 0.5s;}
+#button1 hr {width:20px; height:2px; background-color:white; border-radius:2px; border-color:white; border:0.001px; margin:5px;}
+#button2 {position:absolute; left:25px;top:50%; transform: translate(0,-50%)}
 
 #banner {width:100%; height:12%; min-height:60px; z-index: 99; left:0; background-color:rgba(0,0,0,0.5); z-index:1000;
 }
-#bg	{background-color:black ;top:0;height:100%;width:100%;position:fixed;z-index:501;right:100%; transition:right 0.5s; display:none;
+#bg	{background-color:black ;top:0;height:100%;width:100%;position:fixed;z-index:501;left:100%; transition:left 0.5s; display:none;
 }
 .fbanner {position:fixed; height:70px; top:20%; background-color:#3b5998; transition: right 0.25s; z-index:500;
 }
 @media only screen and (max-width: 700px) {
 #menu {display: none;
-}
-.logo {left:50%; transform:translate(-50%,0);
 }
 #button1,#mmenu,#bg {display:inherit}
 }
@@ -94,7 +92,7 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 }(document, 'script', 'facebook-jssdk'));</script>
 <div onmouseenter="openfb()" onmouseleave="closefb()">
 <button class="fbanner" id="fbbutton" style="width:35px; right:0; border:0;" onclick="fbbutton()">
-<img src="/images/fb.png" style="height:100%; position: absolute; top: 0; left:0; transform: translate(-50%,0)">
+<img src="/images/fb.png" style="height:100%; position: absolute; top: 0; right:20%">
 </button>
 <div class="fbanner" id="fbcontainer" style="width:225px; right:-225px;">
 <div style="top: 50%; right:0; transform: translate(0,-50%); position:absolute;" class="fb-page" data-href="https://www.facebook.com/cappicphotography" data-width="225" data-height="70" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/cappicphotography"><a href="https://www.facebook.com/cappicphotography">Cappic</a></blockquote></div></div>
@@ -108,14 +106,14 @@ else {hidemenu();}
 }
 function showmenu() {
 $("#hr1,#hr2,#hr3").css({"background-color":"dodgerblue","border-color":"dodgerblue"});
-$("#button3").css({"transform":"rotate(-90deg)"});
-$('#mmenu,#bg').css("right","0");
+$("#button3").css({"transform":"rotate(90deg)"});
+$('#mmenu,#bg').css("left","0");
 menuswitch=1;
 }
 function hidemenu() {
 $("#hr1,#hr2,#hr3").css({"background-color":"white","border-color":"white"});
 $("#button3").css({"transform":"rotateZ(0)"});
-$('#mmenu,#bg').css("right","100%");
+$('#mmenu,#bg').css("left","100%");
 menuswitch=0;
 }
 $(window).on("load",menuchange);
