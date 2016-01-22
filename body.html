@@ -173,10 +173,12 @@ history.pushState(location,'' , location + '.html');
 }
 function getajaxfile(location)
 {
+$('#maindiv').fadeOut();
 $('#loading').show();
 $.ajax({url: location + ".html#maindiv", success: function(result){
 	$("#mainwrapper").html(result);
 	$("#loading").hide();
+	$("#maindiv").fadeIn();
     }});
 }
 window.onpopstate = function() {
@@ -189,6 +191,9 @@ window.onpopstate = function() {
     getajaxfile(exlocation);
 	}
 }
+$(window).on("orientationchange",function(){
+	location.reload();
+});
 var root = document.querySelector(":root");
 var vsize = window.outerWidth;
 var fsize = vsize/100;
