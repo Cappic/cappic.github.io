@@ -20,6 +20,7 @@ body:after{
     url(images/1.jpg)
     url(images/2.jpg)
 	url(images/3.jpg)
+	url(images/bg.jpg)
 }
 #page {position:absolute; text-align:center; font-size:28px; width:100%; color:white; font-family: "Roboto";}
 #contactbox {background-color:rgb(0,255,100); width:50%; min-width:450px; min-height:200px; height:35rem;}
@@ -45,7 +46,8 @@ function inview(elem)
     var docViewTop = $window.scrollTop();
     var docViewBottom = docViewTop + $window.height();
 
-    var elemTop = $elem.offset().top;
+	var offset = $elem.offset();
+    var elemTop = offset.top;
     var elemBottom = elemTop + $elem.height();
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));

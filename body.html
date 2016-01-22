@@ -122,14 +122,12 @@ function menuchange() {
 var url = window.location.pathname;
 var filename = url.substring(url.lastIndexOf('/')+1);
 if(filename!="about.html"){
-    var $elem = $("#enable");
-    var $window = $(window);
+    var elem = $("#enable");
+    var docViewTop = $(window).scrollTop();
+	var offset = elem.offset();
+    var elemTop = offset.top;
 
-    var docViewTop = $window.scrollTop();
-	var offset = $elem.offset();
-    var elemBottom = offset.top; + $elem.height();
-
-    if(elemBottom < docViewTop){
+    if(elemTop < docViewTop){
 	$("#mlogo").hide();
 	$("#favi").show();
 	$("#banner").css({"position":"fixed","box-shadow":"0 1px 20px rgba(0,0,0,0.4)","background-color":"dodgerblue"});

@@ -7,6 +7,8 @@ function loadbody()
 $("#headcontent").load("../body.html");
 var subtitle = $("#tutintcontent h1").html();
 document.title = subtitle + " - Tutorials - Cappic Photography";
+var plain = $("#tutintcontent p").text();
+$("#tutintcontent p").html(plain);
 }
 </script>
 </head>
@@ -14,9 +16,11 @@ document.title = subtitle + " - Tutorials - Cappic Photography";
 <div id="headcontent"></div>
 <div id="mainwrapper"><div id="maindiv" style="position:absolute; left:10%;right:10%; bottom:0;top:12%;">
 <style>
-body {background-image:url(../images/bg.jpg)}
+body {background-image:url(../images/bg.jpg) !important}
 
 #maindiv {text-align:center; font-size:28px;}
+#maindiv a {text-decoration:none; color:white; background-color:rgba(200,200,200,1); border-radius: 5px; padding:10px; transition: all 0.25s}
+#maindiv a:hover, #maindiv a:active {background-color:rgba(255,255,255,1); color:black}
 
 h1 {font-family:'Lato'; font-size:5rem;}
 
