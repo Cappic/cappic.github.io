@@ -189,12 +189,13 @@ window.onpopstate = function() {
     getajaxfile(exlocation);
 	}
 }
-$(window).on("orientationchange",function(){
-	location.reload();
-});
+$(window).on("resize",remsize);
+function remsize {
 var root = document.querySelector(":root");
 var vsize = window.outerWidth;
 var fsize = vsize/100;
 root.style.fontSize = fsize;
+}
+remsize();
 </script>
 <link rel="shortcut icon" href="/favicon.ico" />
