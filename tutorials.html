@@ -12,16 +12,6 @@ $("#headcontent").load("body.html");
 <div id="headcontent"></div>
 <div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;top:12%;">
 <style>
-@media only screen and (orientation: portrait) {
-#title {font-size:17rem}
-}
-@media only screen and (max-width: 700px) {
-body {overflow-x:hidden}
-.headlist {position:static; width:100%}
-#lasttut {transform:translate(0,0)!important}
-#title {font-size:17rem}
-}
-
 body {background-image: url('/images/bg.jpg') !important;  font-family: "Roboto";}
 #title {font-family: "Lato"; font-size:9rem; text-align:center}
 .headlist {display:block; width:50%; position:absolute; padding-left:10px; padding-right:10px;}
@@ -36,6 +26,13 @@ transition: height 0.1s, width 0.1s; text-align:center; color:black; padding-top
 
 #notice {font-size:12px; left:0;top:0; background-color:rgba(0,0,0,0.1);position:absolute; width:50px; height:25px; overflow:hidden; transition: all 0.25s; z-index:10}
 #notice:hover {width:330px; height:240px; background-color:rgba(255,255,255,1);}
+
+@media only screen and (orientation: portrait), screen and (max-width: 700px) {
+body {overflow-x:hidden}
+.headlist {position:static; width:100%}
+#lasttut {transform:translate(0,0)!important}
+#title {font-size:17rem}
+}
 </style>
 <title>Tutorials - Cappic Photography</title>
 <div id="title">Tutorials</div>
