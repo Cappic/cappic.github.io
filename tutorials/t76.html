@@ -5,16 +5,21 @@
 function loadbody()
 {
 $("#headcontent").load("../body.html");
-var subtitle = $("#tutintcontent h1").html();
-document.title = subtitle + " - Tutorials - Cappic Photography";
-var plain = $("#tutintcontent p").text();
-$("#tutintcontent p").html(plain);
 }
 </script>
 </head>
 <body>
 <div id="headcontent"></div>
 <div id="mainwrapper"><div id="maindiv" style="position:absolute; left:10%;right:10%; bottom:0;top:12%;">
+<script>
+function tutchange() {
+var subtitle = $("#tutintcontent h1").html();
+document.title = subtitle + " - Tutorials - Cappic Photography";
+var plain = $("#tutintcontent p").text();
+$("#tutintcontent p").html(plain);
+}
+tutchange();
+</script>
 <style>
 body {background-image:url(../images/bg.jpg) !important}
 
@@ -35,6 +40,6 @@ h1 {font-size:12rem}
 </div>
 <a href="http://www.cambridgeincolour.com/tutorials/lens-corrections.htm"><span id="tutextcontent">Continue reading</span></a>
 	</div></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();tutchange();"></script>
 </body>
 </html>

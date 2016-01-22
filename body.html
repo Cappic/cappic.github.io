@@ -116,8 +116,6 @@ $("#button3").css({"transform":"rotateZ(0)"});
 $('#mmenu,#bg').css("left","100%");
 menuswitch=0;
 }
-$(window).on("load",menuchange);
-$(window).on("scroll",menuchange);
 function menuchange() {
 var url = window.location.pathname;
 var filename = url.substring(url.lastIndexOf('/')+1);
@@ -148,6 +146,8 @@ if(filename!="about.html"){
 			$("#bg").css({"background-color":"black"});
 			}
 }
+menuchange();
+$(window).on("scroll",menuchange);
 var fbswitch=0;
 function fbbutton(){
 	if(fbswitch==0){openfb();} else {closefb();}

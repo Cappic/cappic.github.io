@@ -53,8 +53,6 @@ function inview(elem)
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
-$(window).on("load",changebg);
-$(window).on("scroll",changebg);
 function changebg(){
 if(Modernizr.touchevents)
 	{if((inview("#1l")==false)&&(inview("#3l")==false)&&(inview("#4l")==false)) {
@@ -79,6 +77,8 @@ else{
 	}
 	}
 }
+changebg();
+$(window).on("scroll",changebg);
 
 var root = document.querySelector(":root");
 var vsize = window.outerWidth;
