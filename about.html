@@ -77,13 +77,8 @@ else{
 	}
 	}
 }
-changebg();
+$(window).on("load",changebg);
 $(window).on("scroll",changebg);
-
-var root = document.querySelector(":root");
-var vsize = window.outerWidth;
-var fsize = vsize/100;
-root.style.fontSize = fsize;
 //__________________________________________________________________________modernizr________________________________
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
  * http://modernizr.com/download/#-touchevents !*/
