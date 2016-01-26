@@ -13,7 +13,7 @@ $("#headcontent").load("body.html");
 <div id="mainwrapper"><div id="maindiv" style="position:absolute; width:100%; left:0; bottom:0;top:12%;">
 <title>About Us - Cappic Photography</title><script>document.title = "About Us - Cappic Photography";</script>
 <style>
-body {background-image:url("images/1.jpg"); transition:all 0.5s; background-position:center center}
+body {transition:all 0.5s; background-position:center center}
 body:after{
     display:none;
     content:
@@ -23,7 +23,7 @@ body:after{
 	url(images/bg.jpg)
 }
 #page {position:absolute; text-align:center; font-size:28px; width:100%; color:white; font-family: "Roboto";}
-#contactbox {background-color:rgb(0,255,100); width:50%; min-width:450px;}
+#contactbox {background-color:rgb(0,255,100); width:50%;}
 a {text-decoration:none; color:white;}
 .bigmission {font-size:7rem;}
 .title {font-family:'Lato'; font-size:7rem;}
@@ -55,11 +55,7 @@ function inview(elem)
 
 function changebg(){
 if(Modernizr.touchevents)
-	{if((inview("#1l")==false)&&(inview("#3l")==false)&&(inview("#4l")==false)) {
-	$(document.body).css({"background-image":"url('images/bg.jpg')"})
-	} else {
-	$(document.body).css({"background-image":"url('images/1.jpg')"});
-	}
+	{$(document.body).css({"background-image":"url('images/1.jpg')"});
 	}
 else {
 
