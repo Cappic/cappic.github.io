@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script>
+function loadbody()
+{
+$("#headcontent").load("../body.html");
+}
+</script>
+</head>
+<body>
+<div id="headcontent"></div>
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; left:10%;right:10%; bottom:0;top:12%;">
+<script>
+function tutchange() {
+var subtitle = $("#tutintcontent h1").html();
+document.title = subtitle + " - Tutorials - Cappic Photography";
+}
+tutchange();
+</script>
+<style>
+body {background-image:url(../images/bg.jpg) !important}
+
+#maindiv {text-align:center; font-size:28px;}
+#maindiv a {text-decoration:none; color:white; background-color:rgba(200,200,200,1); border-radius: 5px; padding:10px; transition: all 0.25s}
+#maindiv a:hover, #maindiv a:active {background-color:rgba(255,255,255,1); color:black}
+
+h1 {font-family:'Lato'; font-size:5rem;}
+
+@media only screen and (orientation: portrait) {
+h1 {font-size:12rem}
+}
+</style>
+
+<div id="tutintcontent">
+<style>
+.num {font-weight:900; font-size:48px;}
+</style>
+<h1>HOW TO MAKE A DOUBLE EXPOSURE EFFECT</h1>
+<p>
+In this tutorial, we'll use these two photos:
+
+<img src="mtimages/mt1/01.jpg" style="height:80%; padding:10px"><img src="mtimages/mt1/02.jpg" style="height:80%; padding:10px"><br><br>
+
+<span class="num">1. </span> First, we need to cut out the model. Select the pen tool and use it to cut the model by tracing
+ it. The more time you take, the better the result will be!<br><br>
+ 
+ <span class="num">2. </span>Once you've selected the entire model, right click, 
+ then select Make Selection.
+<img src="mtimages/mt1/03.jpg" style="width:100%; padding:10px;"><br><br>
+<span class="num">3. </span>Select Feather Radius as 0 pixels. Then Hit OK.<br><br>
+<img src="mtimages/mt1/04.jpg" style="width:100%; padding:10px;"><br><br>
+<span class="num">4. </span>Press "Ctrl + J" to duplicate your selection and rename the layer formed to "model".<br><br>
+<span class="num">5. </span>Create a new layer and bring it below the "model" layer. Let's rename this layer
+ to say "white background"<br><br>
+ <span class="num">6. </span>Select White or any other color of your choice for the background. 
+ Then select "white background" layer. Press "ALT + Backspace" to fill it with your selected color.<br><br>
+ <span class="num">7. </span>Create a new adjustment layer. Then select black and white.<br><br>
+ <img src="mtimages/mt1/05.jpg" style="width:100%; padding:10px;"><br><br>
+ <span class="num">8. </span>Select the Clipping Mask. Then hit exit.<br><br>
+ <img src="mtimages/mt1/06.jpg" style="width:100%; padding:10px;"><br><br>
+ <span class="num">9. </span>Insert the second forest image on top and release the clipping mask. 
+ Rename the layer to "forest". Then, resize the image as you desire by pressing "Ctrl + T". 
+ After resizing, press Enter.<br><br>
+ <span class="num">10. </span>"Ctrl + T" on the thumbnail of the "model" to make a selection.<br><br>
+ <img src="mtimages/mt1/07.jpg" style="width:100%; padding:10px;"><br><br>
+ <span class="num">11. </span>Then head down and select the Mask Tool.<br><br>
+ <img src="mtimages/mt1/08.jpg" style="width:100%; padding:10px;"><br><br>
+ <span class="num">12. </span>Create a new adjustment layer, Then select Black & White. Exit the properties 
+ panel.<br><br>
+ <img src="mtimages/mt1/09.jpg" style="width:100%; padding:10px;"><br><br>
+ <span class="num">13. </span>Select the "forest" layer. Change the blending mode of "forest" to Lighten.<br><br>
+ <img src="mtimages/mt1/10.jpg" style="width:100%; padding:10px;"><br><br>
+ There you have it! This fill be the final produce:<br><br>
+ <img src="mtimages/mt1/11.jpg" style="width:100%; padding:10px;"><br><br>
+</p>
+</div>
+	</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();tutchange();"></script>
+</body>
+</html>
