@@ -35,12 +35,18 @@ h1 {font-size:12rem}
 <div id="tutintcontent">
 <style>
 .num {font-weight:900; font-size:48px;}
+@media only screen and (max-width:800px) {
+#pic1, #pic2{max-width:100%;}
+}
+@media only screen and (min-width:800px) {
+#pic1, #pic2{height:80%;}
+}
 </style>
 <h1>HOW TO MAKE A DOUBLE EXPOSURE EFFECT</h1>
 <p>
 In this tutorial, we'll use these two photos:
 
-<img src="mtimages/mt1/01.jpg" style="height:80%; max-width:100%; padding:10px"><img src="mtimages/mt1/02.jpg" style="height:80%; padding:10px"><br><br>
+<img id="pic1" src="mtimages/mt1/01.jpg" style="padding:10px"><img id="pic2" src="mtimages/mt1/02.jpg" style="height:80%; padding:10px"><br><br>
 
 <span class="num">1. </span> First, we need to cut out the model. Select the pen tool and use it to cut the model by tracing
  it. The more time you take, the better the result will be!<br><br>
