@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script>
+function loadbody()
+{
+$("#headcontent").load("../body.html");
+}
+</script>
+</head>
+<body>
+<div id="headcontent"></div>
+<div id="mainwrapper"><div id="maindiv" style="position:absolute; left:10%;right:10%; bottom:0;top:12%;">
+<script>
+function tutchange() {
+var subtitle = $("#tutintcontent h1").html();
+document.title = subtitle + " - Tutorials - Cappic Photography";
+var plain = $("#tutintcontent p").text();
+$("#tutintcontent p").html(plain);
+}
+tutchange();
+</script>
+<style>
+body {background-image:url(../images/bg.jpg) !important}
+
+#maindiv {text-align:center; font-size:28px;}
+#maindiv a {text-decoration:none; color:white; background-color:rgba(200,200,200,1); border-radius: 5px; padding:10px; transition: all 0.25s}
+#maindiv a:hover, #maindiv a:active {background-color:rgba(255,255,255,1); color:black}
+
+h1 {font-family:'Lato'; font-size:5rem;}
+#notice {font-size:12px; left:0;top:12%; background-color:rgba(0,0,0,0.1);position:fixed; width:50px; height:25px; overflow:hidden; transition: all 0.25s; z-index:10}
+#notice:hover {width:330px; height:240px; background-color:rgba(255,255,255,1);}
+
+@media only screen and (orientation: portrait) {
+h1 {font-size:12rem}
+}
+</style>
+
+<div id="tutintcontent">
+<h1>ARCHIVAL DIGITAL PHOTO BACKUP</h1>
+<p>Backing up your photos so that they last for 100 years is no longer as simple as having an archival print made and stored in a safe frame. Modern digital images and scans require an intimate understanding of topics such as file format, data degradation, media type and ever-changing storage technologies. This tutorial summarizes the best strategies in three stages — what to store, how and where to backup, and what to do once everything's archived — so that you can be confident your photos will stand the test of time.</p>
+</div>
+<a href="http://www.cambridgeincolour.com/tutorials/archival-photo-backup.htm"><span id="tutextcontent">Continue reading</span></a>
+<!--googleoff: all-->
+<div id="notice">
+
+<p style="text-align:center">NOTICE</p>
+
+<p>CAPPIC DOES NOT ENDORSE ANY FORM OF CONTENT STEALING. We have included articles from several websites for the sole purpose of resharing them which is why we do not include entire articles but only a citation of the article. Since we only include a part of the whole content, the content owner is not put to a disadvantage.
+<br><br>
+IF YOU ARE A CONTENT OWNER OF ANY OF THE ARTICLES cited on this website, please consider emailing us about your complaint before reporting us for content stealing. We'll remove any of the content you don't want us to put on this website. Thank you for your coorperation.
+<br><br>
+Email ID: manas.khurana20@gmail.com</p>
+
+</div>
+<!--googleon: all-->
+	</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" onload="loadbody();tutchange();"></script>
+</body>
+</html>
