@@ -1,40 +1,41 @@
 <style>
 body {margin:0 auto !important; background-size:cover; overflow-x:hidden !important; background:no-repeat fixed center top; font-family:"Roboto";
 }
-#menu {position:relative; float:right; right:50px; z-index:100; top:16px;
+#menu {position:relative; float:right; right:10px; top:16px; z-index:100; height:100%;
 }
-#menu li {display: inline; font-size: 22px; font-family: "Lato"; text-decoration: none; color:white; font-weight: 900;
+#menu li {display: inline; font-size: 22px; font-family: "Lato"; color:white; font-weight: 900;
 }
-#menu a {cursor: pointer; padding-left:1em; padding-right:1em; transition: all .25s;
+#menu a {cursor: pointer; padding-left:1em; padding-right:1em; padding-top:10%; padding-bottom:10%; transition: all .25s;
 }
-#menu a:hover, #menu a:active, #mmenu li:hover, #mmenu li:active {text-shadow: 1px 1px 1px white;
+#menu a:hover, #menu a:active, #mmenu li:hover, #mmenu li:active {background-color:rgba(0,0,0,0.25);
 }
-.logo {height:42px; position:absolute; left:5px;cursor:pointer; top:12px; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
+.logo {position:absolute; left:5px;cursor:pointer; top:0; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
 }
 ::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
 }
 ::-webkit-scrollbar-thumb {background-color:white; border-radius: 10px;
 }
-#mmenu {left:100%; top:100%; bottom:0; transition:all 0.5s; width:100%; z-index:1000; position:relative; transform: translateZ(0); display:none; background-color:transparent;
+#mmenu {left:0; top:100%; bottom:0; width:100%; z-index:1000; position:relative; transform: translateZ(0); display:none; background-color:transparent;
 }
-#mmenu li {display:block; font-size:14rem; color:white; cursor: pointer;  font-family: "Lato";
+#mmenu li {display:block; font-size:14rem; color:white; cursor: pointer;  font-family: "Lato"; left:-40px; position:relative; padding-left:20px;
 }
+#mmenu hr {left:-40px; position:relative;}
 hr {color:white
 }
 #button1 {min-height:60px;height:12%; min-width:2%; width:80px; right:0; top:0; position:fixed; z-index:1001; display:none;background-color:rgba(0,0,0,0.5);  transition: all 0.5s;}
 #button1 hr {width:20px; height:2px; background-color:white; border-radius:2px; border-color:white; border:0.001px; margin:5px;}
 #button2 {position:absolute; left:25px;top:50%; transform: translate(0,-50%)}
 
-#banner {width:100%; height:12%; min-height:60px; z-index: 99; left:0; background-color:rgba(0,0,0,0.5); z-index:1000;
+#banner {width:100%; height:12%; min-height:60px; z-index: 99; left:0; background-color:rgba(0,0,0,0.5); z-index:1000; overflow:hidden;
 }
-#bg	{background-color:black ;top:0;height:100%;width:100%;position:fixed;z-index:501;left:100%; transition:left 0.5s; display:none;
+#bg	{background-color:black ;top:0;height:100%;width:100%;position:fixed;z-index:501;left:0; display:none;
 }
 .fbanner {position:fixed; height:70px; top:20%; background-color:#3b5998; transition: right 0.25s; z-index:500;
 }
 @media only screen and (max-width: 700px) {
-#menu {display: none;
-}
-#button1,#mmenu,#bg {display:inherit}
+#menu {display: none;}
+#banner {overflow:visible}
+#button1 {display:inherit}
 }
 
 @media only screen and (orientation: portrait) {
@@ -51,8 +52,8 @@ url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirn
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 </style>
 <div id="banner">
-	<a onClick="nav(this.className);hidemenu();" class="/index"><img class="logo" id="mlogo" src="/images/mlogo.png"></a>
-	<a onClick="nav(this.className);hidemenu();" class="/index"><img class="logo" id="favi" src="/images/favi.png" style="display:none"></a>
+	<a onClick="nav(this.className);hidemenu();" class="/index"><img class="logo" id="mlogo" src="/images/mlogo.png" style="height:12%"></a>
+	<a onClick="nav(this.className);hidemenu();" class="/index"><img class="logo" id="favi" src="/images/favi.png" style="display:none; height:100%;"></a>
 	<div id="menu">
 		<ul>
 			<li><a onClick="nav(this.className)" class="/gallery">GALLERY</a></li>
@@ -107,13 +108,13 @@ else {hidemenu();}
 function showmenu() {
 $("#hr1,#hr2,#hr3").css({"background-color":"dodgerblue","border-color":"dodgerblue"});
 $("#button3").css({"transform":"rotate(90deg)"});
-$('#mmenu,#bg').css("left","0");
+$('#mmenu,#bg').slideDown(500);
 menuswitch=1;
 }
 function hidemenu() {
 $("#hr1,#hr2,#hr3").css({"background-color":"white","border-color":"white"});
 $("#button3").css({"transform":"rotateZ(0)"});
-$('#mmenu,#bg').css("left","100%");
+$('#mmenu,#bg').slideUp(500);
 menuswitch=0;
 }
 function menuchange() {
@@ -171,13 +172,14 @@ history.pushState(location,'' , location + '.html');
 }
 function getajaxfile(location)
 {
-$('#maindiv').fadeOut();
-$('#loading').show();
-$.ajax({url: location + ".html#maindiv", success: function(result){
-	$("#mainwrapper").html(result);
-	$("#loading").hide();
-	$("#maindiv").fadeIn();
-    }});
+	$('#maindiv').fadeOut();
+	$('#loading').show();
+	$.ajax({url: location + ".html#maindiv", success: function(result){
+		$("#mainwrapper").html(result);
+		$("#loading").hide();
+		$("#maindiv").fadeIn();
+		}});
+
 }
 window.onpopstate = function() {
 	var url = window.location.pathname;
