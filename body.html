@@ -32,7 +32,7 @@ hr {color:white
 }
 .fbanner {position:fixed; height:70px; top:20%; background-color:#3b5998; transition: right 0.25s; z-index:500;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px), screen and (orientation: portrait){
 #menu {display: none;}
 #banner {overflow:visible}
 #button1 {display:inherit}
@@ -45,6 +45,7 @@ hr {color:white
 @media only screen and (orientation: landscape) {
 #fbbutton {min-width:2%;
 }
+#mmenu li {font-size:10rem}
 }
 
 @font-face {font-family: 'Roboto'; font-style: normal; font-weight: 300; src: local('Roboto Light'), local('Roboto-Light'),
@@ -142,6 +143,7 @@ if(filename!="about.html"){
 	}
 	} else {$("#banner").css({"position":"fixed","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
 			$("#mlogo").show();
+			$("#mlogo").css({"height":"100%"});
 			$("#favi").hide();
 			$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
 			$("#bg").css({"background-color":"black"});
