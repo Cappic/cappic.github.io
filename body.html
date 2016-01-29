@@ -9,9 +9,9 @@ body {margin:0 auto !important; background-size:cover; overflow-x:hidden !import
 }
 #menu a {cursor: pointer; padding-left:1em; padding-right:1em; padding-top:10%; padding-bottom:10%; transition: all .25s;
 }
-#menu a:hover, #menu a:active, #mmenu li:hover, #mmenu li:active {background-color:rgba(0,0,0,0.25);
+#menu a:hover, #menu a:active, #mmenu li:hover, #mmenu li:active {background-color:rgba(255,255,255,0.5);
 }
-.logo {position:absolute; left:5px;cursor:pointer; top:0; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
+.logo {position:absolute; min-height:50px; left:5px;cursor:pointer; top:0; z-index:1001; -webkit-filter:drop-shadow(0 2px 1px rgba(0,0,0,0.75))
 }
 ::-webkit-scrollbar {width: 10px; height: 10px; background-color:black;
 }
@@ -24,11 +24,11 @@ body {margin:0 auto !important; background-size:cover; overflow-x:hidden !import
 #mmenu hr {left:-40px; position:relative;}
 hr {color:white
 }
-#button1 {min-height:60px;height:12%; min-width:2%; width:80px; right:0; top:0; position:fixed; z-index:1001; display:none;background-color:rgba(0,0,0,0.5);  transition: all 0.5s;}
+#button1 {min-height:50px;height:12%; min-width:2%; width:80px; right:0; top:0; position:fixed; z-index:1001; display:none;background-color:rgba(255,255,255,0.5);  transition: all 0.5s;}
 #button1 hr {width:20px; height:2px; background-color:white; border-radius:2px; border-color:white; border:0.001px; margin:5px;}
 #button2 {position:absolute; left:25px;top:50%; transform: translate(0,-50%)}
 
-#banner {width:100%; height:12%; min-height:60px; z-index: 99; left:0; background-color:rgba(0,0,0,0.5); z-index:1000; overflow:hidden;
+#banner {width:100%; height:12%; min-height:50px; z-index: 99; left:0; background-color:black; z-index:1000; overflow:hidden;
 }
 #bg	{background-color:black ;top:0;height:100%;width:100%;position:fixed;z-index:501;left:0; display:none;
 }
@@ -131,23 +131,20 @@ if(filename!="about.html"){
 
     if(elemTop < docViewTop){
 	$("#mlogo").hide();
-	$("#favi").show();
+	$("#favi").slideDown();
 	$("#banner").css({"position":"fixed","box-shadow":"0 1px 20px rgba(0,0,0,0.4)","background-color":"dodgerblue"});
-	$("#button1").css({"background-color":"rgba(255,255,255,0.5)"});
 	$("#bg").css({"background-color":"dodgerblue"});
 	}
 	else {
 	$("#mlogo").show();
 	$("#favi").hide();
-	$("#banner").css({"position":"static","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
-	$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
+	$("#banner").css({"position":"static","box-shadow":"none","background-color":"black"});
 	$("#bg").css({"background-color":"black"});
 	}
 	} else {$("#banner").css({"position":"fixed","box-shadow":"none","background-color":"rgba(0,0,0,0.5)"});
 			$("#mlogo").show();
 			$("#mlogo").css({"height":"100%"});
 			$("#favi").hide();
-			$("#button1").css({"background-color":"rgba(0,0,0,0.5)"});
 			$("#bg").css({"background-color":"black"});
 			}
 }
